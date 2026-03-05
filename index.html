@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constancia Laviola | Directora & Productora Audiovisual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #1a1a1a;
+            --accent: #c9a962;
+            --accent-light: #e8d5a3;
+            --text: #f5f5f5;
+            --text-muted: #888;
+            --gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Language Selector */
+        .lang-selector {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(26, 26, 26, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(201, 169, 98, 0.3);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .lang-btn:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: var(--gradient);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(201, 169, 98, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(201, 169, 98, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .hero-location::before {
+            content: '●';
+            color: var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::after {
+            content: '↓';
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 2rem;
+            background: var(--secondary);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--primary);
+            padding: 2rem;
+            border: 1px solid rgba(201, 169, 98, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        /* Experience Timeline */
+        .experience {
+            padding: 8rem 2rem;
+            background: var(--primary);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 2rem;
+            position: relative;
+            margin-bottom: 4rem;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+            justify-content: flex-start;
+            padding-left: 2rem;
+            padding-right: 0;
+            margin-left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--secondary);
+            padding: 2rem;
+            border-left: 3px solid var(--accent);
+            max-width: 400px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 3px solid var(--accent);
+        }
+
+        .timeline-content:hover {
+            background: rgba(201, 169, 98, 0.05);
+            transform: scale(1.02);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border-radius: 50%;
+            right: -8px;
+            top: 2rem;
+            box-shadow: 0 0 20px rgba(201, 169, 98, 0.5);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -8px;
+        }
+
+        .timeline-year {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .timeline-role {
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .timeline-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .award-badge {
+            display: inline-block;
+            background: rgba(201, 169, 98, 0.2);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            margin-top: 1rem;
+            border-radius: 3px;
+        }
+
+        /* Projects Grid */
+        .projects {
+            padding: 8rem 2rem;
+            background: var(--secondary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--primary);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(201, 169, 98, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '🎬';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-category {
+            color: var(--accent);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-meta {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-awards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-award {
+            background: rgba(201, 169, 98, 0.15);
+            color: var(--accent-light);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.7rem;
+            border-radius: 3px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 8rem 2rem;
+            background: var(--primary);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--secondary);
+            padding: 2rem;
+            border: 1px solid rgba(201, 169, 98, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(201, 169, 98, 0.2);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: '→';
+            color: var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 8rem 2rem;
+            background: var(--secondary);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(201, 169, 98, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent);
+            color: var(--primary);
+            border-color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--primary);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(201, 169, 98, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+                padding-left: 2rem;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                border-right: none;
+                border-left: 3px solid var(--accent);
+            }
+
+            .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: -8px;
+                right: auto;
+            }
+
+            .lang-selector {
+                top: 1rem;
+                right: 1rem;
+            }
+        }
+
+        /* Language Content */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="lang-selector">
+        <button class="lang-btn active" onclick="switchLang('es')">ES</button>
+        <button class="lang-btn" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('pt')">PT</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge" data-es="Productora & Directora" data-en="Producer & Director" data-pt="Produtora & Diretora">Productora & Directora</div>
+            <h1>CONSTANCIA LAVIOLA</h1>
+            <p class="hero-subtitle" data-es="20+ años transformando historias en experiencias audiovisuales de clase mundial" data-en="20+ years transforming stories into world-class audiovisual experiences" data-pt="20+ anos transformando histórias em experiências audiovisuais de classe mundial">20+ años transformando historias en experiencias audiovisuales de clase mundial</p>
+            <div class="hero-location">Madrid, España | Disponible Mundialmente</div>
+        </div>
+        <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-es="Perfil" data-en="Profile" data-pt="Perfil">Perfil</span>
+                <h2 class="section-title" data-es="Arquitecta de Producciones" data-en="Production Architect" data-pt="Arquiteta de Produções">Arquitecta de Producciones</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <div class="lang-content active" id="about-es">
+                        <p>Con más de <strong>26 años de trayectoria</strong> en el sector audiovisual brasileño, he forjado una carrera sólida creando y coordinando producciones en publicidad, cine, televisión, documentales y reality shows. Mi enfoque combina <strong>pasión creativa, precisión técnica y dedicación absoluta</strong>.</p>
+                        <p>Soy <strong>trilingüe</strong> (portugués, español e inglés) con amplia experiencia en producciones internacionales, liderando equipos multidisciplinarios y gestionando proyectos complejos garantizando calidad, cumplimiento de plazos y eficiencia presupuestaria.</p>
+                        <p>Actualmente resido en Madrid, conectada directamente con la industria audiovisual europea, mientras continúo gestionando mi empresa de servicios de producción en Río de Janeiro, <strong>conectando continentes y creando puentes entre mercados</strong>.</p>
+                    </div>
+                    <div class="lang-content" id="about-en">
+                        <p>With over <strong>26 years of experience</strong> in the Brazilian audiovisual sector, I have built a solid career creating and coordinating productions in advertising, film, television, documentaries, and reality shows. My approach combines <strong>creative passion, technical precision, and absolute dedication</strong>.</p>
+                        <p>I am <strong>trilingual</strong> (Portuguese, Spanish, and English) with extensive experience in international productions, leading multidisciplinary teams and managing complex projects while ensuring quality, meeting deadlines, and budget efficiency.</p>
+                        <p>I currently reside in Madrid, directly connected to the European audiovisual industry, while continuing to manage my production services company in Rio de Janeiro, <strong>connecting continents and building bridges between markets</strong>.</p>
+                    </div>
+                    <div class="lang-content" id="about-pt">
+                        <p>Com mais de <strong>26 anos de trajetória</strong> no setor audiovisual brasileiro, construí uma carreira sólida criando e coordenando produções em publicidade, cinema, televisão, documentários e reality shows. Minha abordagem combina <strong>paixão criativa, precisão técnica e dedicação absoluta</strong>.</p>
+                        <p>Sou <strong>trilíngue</strong> (português, espanhol e inglês) com ampla experiência em produções internacionais, liderando equipes multidisciplinares e gerenciando projetos complexos garantindo qualidade, cumprimento de prazos e eficiência orçamentária.</p>
+                        <p>Atualmente resido em Madrid, conectada diretamente com a indústria audiovisual europeia, enquanto continuo gerenciando minha empresa de serviços de produção no Rio de Janeiro, <strong>conectando continentes e criando pontes entre mercados</strong>.</p>
+                    </div>
+                </div>
+                
+                <div class="stats-grid reveal">
+                    <div class="stat-card">
+                        <div class="stat-number">26+</div>
+                        <div class="stat-label" data-es="Años de Experiencia" data-en="Years Experience" data-pt="Anos de Experiência">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label" data-es="Producciones" data-en="Productions" data-pt="Produções">Producciones</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label" data-es="Premios" data-en="Awards" data-pt="Prêmios">Premios</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label" data-es="Idiomas" data-en="Languages" data-pt="Idiomas">Idiomas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-es="Trayectoria" data-en="Career Path" data-pt="Trajetória">Trayectoria</span>
+                <h2 class="section-title" data-es="Experiencia Profesional" data-en="Professional Experience" data-pt="Experiência Profissional">Experiencia Profesional</h2>
+            </div>
+
+            <div class="timeline">
+                <!-- 2023-2025 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2023 - 2025</div>
+                        <h3 class="timeline-title" data-es="Formación Continua en Madrid" data-en="Continuous Training in Madrid" data-pt="Formação Contínua em Madrid">Formación Continua en Madrid</h3>
+                        <div class="timeline-role" data-es="Especialización Avanzada" data-en="Advanced Specialization" data-pt="Especialização Avançada">Especialización Avanzada</div>
+                        <div class="timeline-desc" data-es="• Guion de Ficción Cinematográfica - RTVE<br>• IA para Audiovisual - RTVE<br>• Máster en Dirección Cinematográfica - Euro Innova<br>• Business Planning Audiovisual - EARTES<br>• Coproducción Internacional - Estudio GIZ/Riofilmes" data-en="• Film Fiction Screenwriting - RTVE<br>• AI for Audiovisual - RTVE<br>• Master's in Film Direction - Euro Innova<br>• Audiovisual Business Planning - EARTES<br>• International Co-Production - Estudio GIZ/Riofilmes" data-pt="• Roteiro de Ficção Cinematográfica - RTVE<br>• IA para Audiovisual - RTVE<br>• Mestrado em Direção Cinematográfica - Euro Innova<br>• Business Planning Audiovisual - EARTES<br>• Coprodução Internacional - Estudio GIZ/Riofilmes">• Guion de Ficción Cinematográfica - RTVE<br>• IA para Audiovisual - RTVE<br>• Máster en Dirección Cinematográfica - Euro Innova<br>• Business Planning Audiovisual - EARTES<br>• Coproducción Internacional - Estudio GIZ/Riofilmes</div>
+                    </div>
+                </div>
+
+                <!-- 2023 ReggaeLove -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2023</div>
+                        <h3 class="timeline-title">Reggae Love - Bel Spalla</h3>
+                        <div class="timeline-role" data-es="Guion, Dirección y Montaje" data-en="Writer, Director & Editor" data-pt="Roteiro, Direção e Montagem">Guion, Dirección y Montaje</div>
+                        <div class="timeline-desc" data-es="Coordinación integral desde desarrollo de guion y concepto hasta postproducción. Videoclip musical completo." data-en="Full coordination from script and concept development to post-production. Complete music video." data-pt="Coordenação integral desde desenvolvimento de roteiro e conceito até pós-produção. Videoclipe musical completo.">Coordinación integral desde desarrollo de guion y concepto hasta postproducción. Videoclip musical completo.</div>
+                    </div>
+                </div>
+
+                <!-- 2022-2023 Glorious Nanny -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2022 - 2023</div>
+                        <h3 class="timeline-title" data-es="Una Niñera Gloriosa" data-en="A Glorious Nanny" data-pt="Uma Babá Gloriosa">Una Niñera Gloriosa</h3>
+                        <div class="timeline-role">1ª Asistente de Dirección | UNO Filmes</div>
+                        <div class="timeline-desc" data-es="Gestión del equipo de dirección desde preproducción hasta final de rodaje, cumpliendo fechas y presupuesto. Largometraje." data-en="Management of directing team from pre-production to end of shooting, meeting deadlines and budget. Feature film." data-pt="Gestão da equipe de direção desde pré-produção até final de filmagem, cumprindo prazos e orçamento. Longa-metragem.">Gestión del equipo de dirección desde preproducción hasta final de rodaje, cumpliendo fechas y presupuesto. Largometraje.</div>
+                    </div>
+                </div>
+
+                <!-- 2022 Coldplay -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2022</div>
+                        <h3 class="timeline-title">Coldplay at Rock in Rio</h3>
+                        <div class="timeline-role" data-es="1ª Asistente de Dirección / Field Producer" data-en="1st Assistant Director / Field Producer" data-pt="1ª Assistente de Direção / Field Producer">1ª Asistente de Dirección / Field Producer</div>
+                        <div class="timeline-desc" data-es="Asistente de Ben Mor en documental rodado en múltiples localizaciones de Río de Janeiro durante el festival. Producción internacional de alto perfil." data-en="Assistant to Ben Mor on documentary shot across Rio de Janeiro locations during the festival. High-profile international production." data-pt="Assistente de Ben Mor em documentário filmado em múltiplas localizações do Rio de Janeiro durante o festival. Produção internacional de alto perfil.">Asistente de Ben Mor en documental rodado en múltiples localizaciones de Río de Janeiro durante el festival. Producción internacional de alto perfil.</div>
+                    </div>
+                </div>
+
+                <!-- 2021-2022 Brutal Pact -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2021 - 2022</div>
+                        <h3 class="timeline-title" data-es="Pacto Brutal - El Asesinato de Daniella Perez" data-en="Brutal Pact - The Murder of Daniella Perez" data-pt="Pacto Brutal - O Assassinato de Daniella Perez">Pacto Brutal - El Asesinato de Daniella Perez</h3>
+                        <div class="timeline-role">1ª Asistente de Dirección | HBO / Producing Partners</div>
+                        <div class="timeline-desc" data-es="Papel clave en scouting de localizaciones para reconstrucción de escenas. Gestión de planificación, control de tiempos y resolución de incidencias." data-en="Key role in location scouting for scene reconstruction. Planning management, time control and incident resolution." data-pt="Papel chave em scouting de locações para reconstrução de cenas. Gestão de planejamento, controle de tempos e resolução de incidentes.">Papel clave en scouting de localizaciones para reconstrucción de escenas. Gestión de planificación, control de tiempos y resolución de incidencias.</div>
+                        <span class="award-badge">🏆 Gran Premio del Cine Brasileño 2023 - Mejor Serie Documental</span>
+                    </div>
+                </div>
+
+                <!-- 2021 The Followers -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2021</div>
+                        <h3 class="timeline-title" data-es="Las Seguidoras (As Seguidoras)" data-en="The Followers" data-pt="As Seguidoras">Las Seguidoras (As Seguidoras)</h3>
+                        <div class="timeline-role">1ª Asistente de Dirección de Set | Paramount / Porta dos Fundos</div>
+                        <div class="timeline-desc" data-es="Incorporación en plena fase de rodaje para sustituir por baja médica. Liderazgo inmediato de equipo, cumplimiento de plan en contexto post-pandemia." data-en="Joined mid-shoot to replace 1st AD on medical leave. Immediate team leadership, schedule compliance in post-pandemic context." data-pt="Incorporação em plena fase de filmagem para substituir por baixa médica. Liderança imediata de equipe, cumprimento de plano em contexto pós-pandemia.">Incorporación en plena fase de rodaje para sustituir por baja médica. Liderazgo inmediato de equipo, cumplimiento de plan en contexto post-pandemia.</div>
+                    </div>
+                </div>
+
+                <!-- 2021 When the Sun Sets -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2021</div>
+                        <h3 class="timeline-title" data-es="Cuando el Sol se Pone (Quando o Sol se Põe)" data-en="When the Sun Sets" data-pt="Quando o Sol se Põe">Cuando el Sol se Pone (Quando o Sol se Põe)</h3>
+                        <div class="timeline-role" data-es="Guion, Dirección y Producción" data-en="Writer, Director & Producer" data-pt="Roteiro, Direção e Produção">Guion, Dirección y Producción</div>
+                        <div class="timeline-desc" data-es="Proyecto financiado por Secretaría de Cultura de Río de Janeiro. 15+ selecciones en festivales internacionales." data-en="Project funded by Rio de Janeiro Culture Secretariat. 15+ selections at international festivals." data-pt="Projeto financiado pela Secretaria de Cultura do Rio de Janeiro. 15+ seleções em festivais internacionais.">Proyecto financiado por Secretaría de Cultura de Río de Janeiro. 15+ selecciones en festivales internacionales.</div>
+                        <div class="project-awards">
+                            <span class="project-award">🏆 Toronto Independent FF</span>
+                            <span class="project-award">🏆 Kansas Arthouse FF</span>
+                            <span class="project-award">🏆 Sicily Independent Film Award</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2018 O Pião -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2018</div>
+                        <h3 class="timeline-title">O Pião</h3>
+                        <div class="timeline-role" data-es="Producción y Co-dirección" data-en="Production & Co-direction" data-pt="Produção e Co-direção">Producción y Co-dirección</div>
+                        <div class="timeline-desc" data-es="Cortometraje premiado internacionalmente con selección en múltiples festivales." data-en="Internationally awarded short film with selection at multiple festivals." data-pt="Curta-metragem premiado internacionalmente com seleção em múltiplos festivais.">Cortometraje premiado internacionalmente con selección en múltiples festivales.</div>
+                        <span class="award-badge">🏆 San Diego Black Film Festival</span>
+                    </div>
+                </div>
+
+                <!-- 2016 Olympics -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2016</div>
+                        <h3 class="timeline-title" data-es="Juegos Olímpicos Río 2016" data-en="Rio 2016 Olympic Games" data-pt="Jogos Olímpicos Rio 2016">Juegos Olímpicos Río 2016</h3>
+                        <div class="timeline-role" data-es="Assistant Venue Producer - Arena Carioca 3" data-en="Assistant Venue Producer - Arena Carioca 3" data-pt="Assistant Venue Producer - Arena Carioca 3">Assistant Venue Producer - Arena Carioca 3</div>
+                        <div class="timeline-desc" data-es="Gestión operativa de eventos olímpicos (esgrima y taekwondo). Coordinación de equipos, horarios y flujos operativos en entorno de alta presión internacional." data-en="Operational management of Olympic events (fencing and taekwondo). Team coordination, schedules and operational flows in high-pressure international environment." data-pt="Gestão operacional de eventos olímpicos (esgrima e taekwondo). Coordenação de equipes, horários e fluxos operacionais em ambiente de alta pressão internacional.">Gestión operativa de eventos olímpicos (esgrima y taekwondo). Coordinación de equipos, horarios y flujos operativos en entorno de alta presión internacional.</div>
+                    </div>
+                </div>
+
+                <!-- 2011 Fear Factor -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2011</div>
+                        <h3 class="timeline-title">Fear Factor - India</h3>
+                        <div class="timeline-role">Field Producer / Fixer | Endemol</div>
+                        <div class="timeline-desc" data-es="Gestión logística, permisos, seguridad y coordinación local para reality show internacional." data-en="Logistics management, permits, security and local coordination for international reality show." data-pt="Gestão logística, permissões, segurança e coordenação local para reality show internacional.">Gestión logística, permisos, seguridad y coordinación local para reality show internacional.</div>
+                    </div>
+                </div>
+
+                <!-- 2005 Amazing Race -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2005</div>
+                        <h3 class="timeline-title">The Amazing Race</h3>
+                        <div class="timeline-role">Field Producer | CBS</div>
+                        <div class="timeline-desc" data-es="Producción en múltiples localizaciones, coordinación de equipos internacionales." data-en="Production in multiple locations, coordination of international teams." data-pt="Produção em múltiplas localizações, coordenação de equipes internacionais.">Producción en múltiples localizaciones, coordinación de equipos internacionales.</div>
+                    </div>
+                </div>
+
+                <!-- 2002 RUSH -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2002</div>
+                        <h3 class="timeline-title">RUSH in Rio & The Boys in Brazil</h3>
+                        <div class="timeline-role" data-es="Field Producer & 1ª Asistente de Dirección" data-en="Field Producer & 1st Assistant Director" data-pt="Field Producer & 1ª Assistente de Direção">Field Producer & 1ª Asistente de Dirección</div>
+                        <div class="timeline-desc" data-es="Producción documental de gira internacional. DVD oficial de lanzamiento internacional." data-en="Documentary production of international tour. Official DVD international release." data-pt="Produção documental de turnê internacional. DVD oficial de lançamento internacional.">Producción documental de gira internacional. DVD oficial de lanzamiento internacional.</div>
+                    </div>
+                </div>
+
+                <!-- 2000 Woman on Top -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">2000</div>
+                        <h3 class="timeline-title">Woman on Top</h3>
+                        <div class="timeline-role" data-es="Asistente de Dirección / Coordinación de Producción" data-en="Assistant Director / Production Coordination" data-pt="Assistente de Direção / Coordenação de Produção">Asistente de Dirección / Coordinación de Producción</div>
+                        <div class="timeline-desc" data-es="Producción internacional Fox con equipo americano y europeo. Gestión logística, planificación y soporte a rodaje con Penélope Cruz, Wagner Moura y Murilo Benício." data-en="Fox international production with American and European team. Logistics management, planning and shooting support with Penélope Cruz, Wagner Moura and Murilo Benício." data-pt="Produção internacional Fox com equipe americana e europeia. Gestão logística, planejamento e suporte à filmagem com Penélope Cruz, Wagner Moura e Murilo Benício.">Producción internacional Fox con equipo americano y europeo. Gestión logística, planificación y soporte a rodaje con Penélope Cruz, Wagner Moura y Murilo Benício.</div>
+                    </div>
+                </div>
+
+                <!-- 1999 Xangô -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">1999</div>
+                        <h3 class="timeline-title" data-es="O Xangô de Baker Street" data-en="Xangô of Baker Street" data-pt="O Xangô de Baker Street">O Xangô de Baker Street</h3>
+                        <div class="timeline-role" data-es="2ª Asistente de Dirección" data-en="2nd Assistant Director" data-pt="2ª Assistente de Direção">2ª Asistente de Dirección</div>
+                        <div class="timeline-desc" data-es="Coordinación de elenco, preparación de escenas y enlace entre departamentos de dirección y producción. Rodaje internacional Brasil-Portugal." data-en="Cast coordination, scene preparation and liaison between directing and production departments. Brazil-Portugal international shoot." data-pt="Coordenação de elenco, preparação de cenas e ligação entre departamentos de direção e produção. Filmagem internacional Brasil-Portugal.">Coordinación de elenco, preparación de escenas y enlace entre departamentos de dirección y producción. Rodaje internacional Brasil-Portugal.</div>
+                    </div>
+                </div>
+
+                <!-- 1998 Founding -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-content">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-year">1998</div>
+                        <h3 class="timeline-title" data-es="Inicio de Trayectoria" data-en="Career Start" data-pt="Início da Trajetória">Inicio de Trayectoria</h3>
+                        <div class="timeline-role" data-es="Sector Audiovisual Brasileño" data-en="Brazilian Audiovisual Sector" data-pt="Setor Audiovisual Brasileiro">Sector Audiovisual Brasileño</div>
+                        <div class="timeline-desc" data-es="Comienzo de carrera en producción audiovisual en Río de Janeiro, Brasil." data-en="Start of career in audiovisual production in Rio de Janeiro, Brazil." data-pt="Começo de carreira em produção audiovisual no Rio de Janeiro, Brasil.">Comienzo de carrera en producción audiovisual en Río de Janeiro, Brasil.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-es="Proyectos Destacados" data-en="Featured Projects" data-pt="Projetos Destacados">Proyectos Destacados</span>
+                <h2 class="section-title" data-es="Obras Premiadas" data-en="Award-Winning Works" data-pt="Obras Premiadas">Obras Premiadas</h2>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card reveal">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <div class="project-category">HBO Max | Documental</div>
+                        <h3 class="project-title" data-es="Pacto Brutal" data-en="Brutal Pact" data-pt="Pacto Brutal">Pacto Brutal</h3>
+                        <div class="project-meta">1ª Asistente de Dirección | 2021-2022</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Serie documental ganadora del Gran Premio del Cine Brasileño 2023. Reconstrucción meticulosa de uno de los casos más impactantes de Brasil." data-en="Award-winning documentary series at the 2023 Brazilian Cinema Grand Prix. Meticulous reconstruction of one of Brazil's most impactful cases." data-pt="Série documental vencedora do Grande Prêmio do Cinema Brasileiro 2023. Reconstrução meticulosa de um dos casos mais impactantes do Brasil.">Serie documental ganadora del Gran Premio del Cine Brasileño 2023. Reconstrucción meticulosa de uno de los casos más impactantes de Brasil.</p>
+                        <div class="project-awards">
+                            <span class="project-award">🏆 Gran Premio del Cine Brasileño</span>
+                            <span class="project-award">🏆 Mejor Serie Documental 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <div class="project-category">Cortometraje | Drama</div>
+                        <h3 class="project-title" data-es="Cuando el Sol se Pone" data-en="When the Sun Sets" data-pt="Quando o Sol se Põe">Cuando el Sol se Pone</h3>
+                        <div class="project-meta">Directora, Guionista & Productora | 2021</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Financiado por Retomada Cultural Río. Triple ganador internacional y 15+ selecciones en festivales globales incluyendo Toronto y Kansas." data-en="Funded by Retomada Cultural Rio. Triple international winner and 15+ selections at global festivals including Toronto and Kansas." data-pt="Financiado pela Retomada Cultural Rio. Triplo vencedor internacional e 15+ seleções em festivais globais incluindo Toronto e Kansas.">Financiado por Retomada Cultural Río. Triple ganador internacional y 15+ selecciones en festivales globales incluyendo Toronto y Kansas.</p>
+                        <div class="project-awards">
+                            <span class="project-award">🏆 Toronto Independent FF</span>
+                            <span class="project-award">🏆 Kansas Arthouse FF</span>
+                            <span class="project-award">🏆 Sicily Independent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <div class="project-category">Música | Documental</div>
+                        <h3 class="project-title">Coldplay at Rock in Rio</h3>
+                        <div class="project-meta">1ª Asistente de Dirección | 2022</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Documental exclusivo de la banda británica durante su histórica presentación en Rock in Rio. Coordinación internacional con equipo de Ben Mor." data-en="Exclusive documentary of the British band during their historic Rock in Rio performance. International coordination with Ben Mor's team." data-pt="Documentário exclusivo da banda britânica durante sua histórica apresentação no Rock in Rio. Coordenação internacional com equipe de Ben Mor.">Documental exclusivo de la banda británica durante su histórica presentación en Rock in Rio. Coordinación internacional con equipo de Ben Mor.</p>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-image"></div>
+                    <div class="project-content">
+                        <div class="project-category">Cortometraje</div>
+                        <h3 class="project-title">O Pião</h3>
+                        <div class="project-meta">Productora & Co-Directora | 2018</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Ganador en San Diego Black Film Festival y seleccionado en 5 festivales internacionales. Exploración íntima de narrativas brasileñas." data-en="Winner at San Diego Black Film Festival and selected at 5 international festivals. Intimate exploration of Brazilian narratives." data-pt="Vencedor no San Diego Black Film Festival e selecionado em 5 festivais internacionais. Exploração íntima de narrativas brasileiras.">Ganador en San Diego Black Film Festival y seleccionado en 5 festivales internacionales. Exploración íntima de narrativas brasileñas.</p>
+                        <div class="project-awards">
+                            <span class="project-award">🏆 San Diego Black Film Festival</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" data-es="Competencias" data-en="Skills" data-pt="Competências">Competencias</span>
+                <h2 class="section-title" data-es="Arsenal Profesional" data-en="Professional Arsenal" data-pt="Arsenal Profissional">Arsenal Profesional</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3 data-es="Dirección & Producción" data-en="Direction & Production" data-pt="Direção & Produção">Dirección & Producción</h3>
+                    <ul class="skill-list">
+                        <li data-es="1ª Asistente de Dirección" data-en="1st Assistant Direction" data-pt="1ª Assistente de Direção">1ª Asistente de Dirección</li>
+                        <li data-es="Dirección Cinematográfica" data-en="Film Direction" data-pt="Direção Cinematográfica">Dirección Cinematográfica</li>
+                        <li data-es="Field Production" data-en="Field Production" data-pt="Field Production">Field Production</li>
+                        <li data-es="Coordinación de Producción" data-en="Production Coordination" data-pt="Coordenação de Produção">Coordinación de Producción</li>
+                        <li data-es="Gestión de Localizaciones" data-en="Location Management" data-pt="Gestão de Locações">Gestión de Localizaciones</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3 data-es="Gestión & Liderazgo" data-en="Management & Leadership" data-pt="Gestão & Liderança">Gestión & Liderazgo</h3>
+                    <ul class="skill-list">
+                        <li data-es="Liderazgo de Equipos Multiculturales" data-en="Multicultural Team Leadership" data-pt="Liderança de Equipes Multiculturais">Liderazgo de Equipos Multiculturales</li>
+                        <li data-es="Gestión de Presupuestos" data-en="Budget Management" data-pt="Gestão de Orçamentos">Gestión de Presupuestos</li>
+                        <li data-es="Planificación & Scheduling" data-en="Planning & Scheduling" data-pt="Planejamento & Scheduling">Planificación & Scheduling</li>
+                        <li data-es="Resolución de Crisis" data-en="Crisis Resolution" data-pt="Resolução de Crises">Resolución de Crisis</li>
+                        <li data-es="Negociación con Proveedores" data-en="Vendor Negotiation" data-pt="Negociação com Fornecedores">Negociación con Proveedores</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3 data-es="Herramientas Técnicas" data-en="Technical Tools" data-pt="Ferramentas Técnicas">Herramientas Técnicas</h3>
+                    <ul class="skill-list">
+                        <li>Movie Magic Scheduling</li>
+                        <li>DaVinci Resolve Studio</li>
+                        <li>Microsoft Office (Excel Avanzado)</li>
+                        <li>Google Workspace</li>
+                        <li data-es="Gestión Documental" data-en="Document Management" data-pt="Gestão Documental">Gestión Documental</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category reveal">
+                    <h3 data-es="Idiomas" data-en="Languages" data-pt="Idiomas">Idiomas</h3>
+                    <ul class="skill-list">
+                        <li data-es="Portugués: Nativo" data-en="Portuguese: Native" data-pt="Português: Nativo">Portugués: Nativo</li>
+                        <li data-es="Inglés: Fluido/Profesional" data-en="English: Fluent/Professional" data-pt="Inglês: Fluente/Profissional">Inglés: Fluido/Profesional</li>
+                        <li data-es="Español: Avanzado" data-en="Spanish: Advanced" data-pt="Espanhol: Avançado">Español: Avanzado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content reveal">
+                <span class="section-label" data-es="Contacto" data-en="Contact" data-pt="Contato">Contacto</span>
+                <h2 data-es="Construyamos algo extraordinario" data-en="Let's build something extraordinary" data-pt="Vamos construir algo extraordinário">Construyamos algo extraordinario</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;" data-es="Disponible para proyectos internacionales, coproducciones España-Brasil-Europa y oportunidades de dirección y producción." data-en="Available for international projects, Spain-Brazil-Europe co-productions and direction and production opportunities." data-pt="Disponível para projetos internacionais, coproduções Espanha-Brasil-Europa e oportunidades de direção e produção.">Disponible para proyectos internacionales, coproducciones España-Brasil-Europa y oportunidades de dirección y producción.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:constancia66@gmail.com" class="contact-link">
+                        <span>📧</span> constancia66@gmail.com
+                    </a>
+                    <a href="tel:+34653234406" class="contact-link">
+                        <span>📱</span> +34 653 234 406
+                    </a>
+                    <a href="https://www.linkedin.com/in/constancialaviolacarreiro/" target="_blank" class="contact-link">
+                        <span>💼</span> LinkedIn
+                    </a>
+                    <a href="https://www.imdb.com/name/nm0492121/" target="_blank" class="contact-link">
+                        <span>🎬</span> IMDb
+                    </a>
+                    <a href="https://vimeo.com/constancialaviola" target="_blank" class="contact-link">
+                        <span>🎥</span> Vimeo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Constancia Laviola. <span data-es="Todos los derechos reservados." data-en="All rights reserved." data-pt="Todos os direitos reservados.">Todos los derechos reservados.</span></p>
+        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--accent);">Madrid, España | Rio de Janeiro, Brasil</p>
+    </footer>
+
+    <script>
+        // Language Switcher
+        function switchLang(lang) {
+            // Update buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.lang-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const selectedContent = document.getElementById('about-' + lang);
+            if (selectedContent) {
+                selectedContent.classList.add('active');
+            }
+
+            // Update all data attributes
+            document.querySelectorAll('[data-es]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text && !el.classList.contains('lang-content')) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = text;
+                    } else {
+                        el.innerHTML = text;
+                    }
+                }
+            });
+
+            // Update html lang
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
+        }
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Trigger once on load
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

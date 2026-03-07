@@ -228,13 +228,6 @@
             font-weight: 600;
         }
 
-        .about-image {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-            border: 2px solid var(--accent);
-        }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -266,118 +259,6 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-top: 0.5rem;
-        }
-
-        /* Experience Timeline */
-        .experience {
-            padding: 8rem 2rem;
-            background: var(--primary);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, var(--accent), transparent);
-        }
-
-        .timeline-item {
-            display: flex;
-            justify-content: flex-end;
-            padding-right: 2rem;
-            position: relative;
-            margin-bottom: 4rem;
-            width: 50%;
-        }
-
-        .timeline-item:nth-child(even) {
-            align-self: flex-end;
-            justify-content: flex-start;
-            padding-left: 2rem;
-            padding-right: 0;
-            margin-left: 50%;
-        }
-
-        .timeline-content {
-            background: var(--secondary);
-            padding: 2rem;
-            border-left: 3px solid var(--accent);
-            max-width: 400px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            border-left: none;
-            border-right: 3px solid var(--accent);
-        }
-
-        .timeline-content:hover {
-            background: rgba(201, 169, 98, 0.05);
-            transform: scale(1.02);
-        }
-
-        .timeline-dot {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background: var(--accent);
-            border-radius: 50%;
-            right: -8px;
-            top: 2rem;
-            box-shadow: 0 0 20px rgba(201, 169, 98, 0.5);
-        }
-
-        .timeline-item:nth-child(even) .timeline-dot {
-            right: auto;
-            left: -8px;
-        }
-
-        .timeline-year {
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-
-        .timeline-role {
-            color: var(--accent-light);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-
-        .timeline-desc {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .award-badge {
-            display: inline-block;
-            background: rgba(201, 169, 98, 0.2);
-            color: var(--accent);
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            margin-top: 1rem;
-            border-radius: 3px;
         }
 
         /* Projects Grid */
@@ -466,14 +347,14 @@
         /* Gallery */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 0.5rem;
             margin-top: 1rem;
         }
 
         .gallery img {
             width: 100%;
-            height: 100px;
+            height: 80px;
             object-fit: cover;
             border-radius: 5px;
             cursor: pointer;
@@ -623,37 +504,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .timeline::before {
-                left: 0;
-            }
-
-            .timeline-item,
-            .timeline-item:nth-child(even) {
-                width: 100%;
-                margin-left: 0;
-                padding-left: 2rem;
-                padding-right: 0;
-                justify-content: flex-start;
-            }
-
-            .timeline-item:nth-child(even) .timeline-content {
-                border-right: none;
-                border-left: 3px solid var(--accent);
-            }
-
-            .timeline-dot,
-            .timeline-item:nth-child(even) .timeline-dot {
-                left: -8px;
-                right: auto;
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .lang-selector {
                 top: 1rem;
                 right: 1rem;
-            }
-
-            .gallery {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -729,7 +586,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="Constancia_Laviola_perfil.jpeg" alt="Constancia Laviola" class="hero-image">
+            <img src="perfil.jpeg" alt="Constancia Laviola" class="hero-image">
             <div class="hero-badge" data-es="Productora & Directora" data-en="Producer & Director" data-pt="Produtora & Diretora">Productora & Directora</div>
             <h1>CONSTANCIA LAVIOLA</h1>
             <p class="hero-subtitle" data-es="26+ años transformando historias en experiencias audiovisuales de clase mundial" data-en="26+ years transforming stories into world-class audiovisual experiences" data-pt="26+ anos transformando histórias em experiências audiovisuais de classe mundial">26+ años transformando historias en experiencias audiovisuales de clase mundial</p>
@@ -787,7 +644,7 @@
         </div>
     </section>
 
-       <!-- Featured Projects -->
+    <!-- Featured Projects -->
     <section class="projects">
         <div class="container">
             <div class="section-header reveal">
@@ -799,7 +656,7 @@
                 <!-- Quando O Sol Se Põe -->
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <img src="portfolio/TBT%20QOSSP/Quando%20O%20Sol%20Se%20P%C3%B5e.jpg" alt="Quando O Sol Se Põe" onclick="openLightbox(this.src)">
+                        <img src="qossp1.jpeg" alt="Quando O Sol Se Põe" onclick="openLightbox(this.src)">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Cortometraje | Drama</div>
@@ -812,8 +669,30 @@
                             <span class="project-award">🏆 Sicily Independent</span>
                         </div>
                         <div class="gallery">
-                            <img src="portfolio/TBT%20QOSSP/Quando%20O%20Sol%20Se%20P%C3%B5e1.jpg" alt="QOSSP 1" onclick="openLightbox(this.src)">
-                            <img src="portfolio/TBT%20QOSSP/Quando%20O%20Sol%20Se%20P%C3%B5e4.jpg" alt="QOSSP 4" onclick="openLightbox(this.src)">
+                            <img src="qossp2.jpeg" alt="QOSSP 2" onclick="openLightbox(this.src)">
+                            <img src="qossp3.jpeg" alt="QOSSP 3" onclick="openLightbox(this.src)">
+                            <img src="qossp4.jpeg" alt="QOSSP 4" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pacto Brutal -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="pactobrutal0.jpeg" alt="Pacto Brutal" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">HBO Max | Documental</div>
+                        <h3 class="project-title" data-es="Pacto Brutal" data-en="Brutal Pact" data-pt="Pacto Brutal">Pacto Brutal</h3>
+                        <div class="project-meta">1ª Asistente de Dirección | 2021-2022</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Serie documental ganadora del Gran Premio del Cine Brasileño 2023. Reconstrucción meticulosa de uno de los casos más impactantes de Brasil." data-en="Award-winning documentary series at the 2023 Brazilian Cinema Grand Prix. Meticulous reconstruction of one of Brazil's most impactful cases." data-pt="Série documental vencedora do Grande Prêmio do Cinema Brasileiro 2023. Reconstrução meticulosa de um dos casos mais impactantes do Brasil.">Serie documental ganadora del Gran Premio del Cine Brasileño 2023.</p>
+                        <div class="project-awards">
+                            <span class="project-award">🏆 Gran Premio del Cine Brasileño</span>
+                            <span class="project-award">🏆 Mejor Serie Documental 2023</span>
+                        </div>
+                        <div class="gallery">
+                            <img src="pactobrutal1.jpeg" alt="Pacto Brutal 1" onclick="openLightbox(this.src)">
+                            <img src="pactobrutal7.jpeg" alt="Pacto Brutal 7" onclick="openLightbox(this.src)">
                         </div>
                     </div>
                 </div>
@@ -821,7 +700,7 @@
                 <!-- O Pião -->
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <img src="portfolio/TBT%20O%20PI%C3%83O/O%20PIAO%2026.jpg" alt="O Pião" onclick="openLightbox(this.src)">
+                        <img src="opiao0.jpeg" alt="O Pião" onclick="openLightbox(this.src)">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Cortometraje</div>
@@ -832,29 +711,8 @@
                             <span class="project-award">🏆 San Diego Black Film Festival</span>
                         </div>
                         <div class="gallery">
-                            <img src="portfolio/TBT%20O%20PI%C3%83O/O%20P%C3%A3o%2010.jpg" alt="O Pião 10" onclick="openLightbox(this.src)">
-                            <img src="portfolio/TBT%20O%20PI%C3%83O/O%20Pi%C3%A3o.jpg" alt="O Pião" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pacto Brutal -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="portfolio/PactoBrutal/PactoBrutal%2021.jpg" alt="Pacto Brutal" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">HBO Max | Documental</div>
-                        <h3 class="project-title" data-es="Pacto Brutal" data-en="Brutal Pact" data-pt="Pacto Brutal">Pacto Brutal</h3>
-                        <div class="project-meta">1ª Asistente de Dirección | 2021-2022</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Serie documental ganadora del Gran Premio del Cine Brasileño 2023." data-en="Award-winning documentary series at the 2023 Brazilian Cinema Grand Prix." data-pt="Série documental vencedora do Grande Prêmio do Cinema Brasileiro 2023.">Serie documental ganadora del Gran Premio del Cine Brasileño 2023.</p>
-                        <div class="project-awards">
-                            <span class="project-award">🏆 Gran Premio del Cine Brasileño</span>
-                            <span class="project-award">🏆 Mejor Serie Documental 2023</span>
-                        </div>
-                        <div class="gallery">
-                            <img src="portfolio/PactoBrutal/PactoBrutal%2026.jpg" alt="Pacto Brutal 26" onclick="openLightbox(this.src)">
-                            <img src="portfolio/PactoBrutal/PactoBrutal%2023.jpg" alt="Pacto Brutal 23" onclick="openLightbox(this.src)">
+                            <img src="opiao1.jpeg" alt="O Pião 1" onclick="openLightbox(this.src)">
+                            <img src="opiao2.jpeg" alt="O Pião 2" onclick="openLightbox(this.src)">
                         </div>
                     </div>
                 </div>
@@ -862,7 +720,7 @@
                 <!-- As Seguidoras -->
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <img src="portfolio/AS%20SEGUIDORAS/AS%20seguidoiras%203.jpg" alt="As Seguidoras" onclick="openLightbox(this.src)">
+                        <img src="seguidoras1.jpeg" alt="As Seguidoras" onclick="openLightbox(this.src)">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Paramount+ | Serie</div>
@@ -870,16 +728,17 @@
                         <div class="project-meta">1ª Asistente de Dirección de Set | 2021</div>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Incorporación en plena fase de rodaje para sustituir por baja médica. Liderazgo inmediato de equipo." data-en="Joined mid-shoot to replace 1st AD on medical leave. Immediate team leadership." data-pt="Incorporação em plena fase de filmagem para substituir por baixa médica. Liderança imediata de equipe.">Incorporación en plena fase de rodaje para sustituir por baja médica. Liderazgo inmediato de equipo.</p>
                         <div class="gallery">
-                            <img src="portfolio/AS%20SEGUIDORAS/as%20seguidoras16.jpg" alt="As Seguidoras 16" onclick="openLightbox(this.src)">
-                            <img src="portfolio/AS%20SEGUIDORAS/as%20seguidoras.jpg" alt="As Seguidoras" onclick="openLightbox(this.src)">
+                            <img src="seguidoras2.jpeg" alt="As Seguidoras 2" onclick="openLightbox(this.src)">
+                            <img src="seguidoras3.jpeg" alt="As Seguidoras 3" onclick="openLightbox(this.src)">
+                            <img src="seguidoras5.jpeg" alt="As Seguidoras 5" onclick="openLightbox(this.src)">
                         </div>
                     </div>
                 </div>
 
-                <!-- Olimpíadas 2016 -->
+                <!-- Juegos Olímpicos Río 2016 -->
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <img src="portfolio/Olimpics_2016/Post%202016_9.jpg" alt="Olimpíadas 2016" onclick="openLightbox(this.src)">
+                        <img src="Olimpic4.JPEG" alt="Olimpíadas 2016" onclick="openLightbox(this.src)">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Eventos | Juegos Olímpicos</div>
@@ -887,16 +746,35 @@
                         <div class="project-meta">Assistant Venue Producer | Arena Carioca 3</div>
                         <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Gestión operativa de eventos olímpicos (esgrima y taekwondo). Coordinación de equipos en entorno de alta presión." data-en="Operational management of Olympic events (fencing and taekwondo). Team coordination in high-pressure environment." data-pt="Gestão operacional de eventos olímpicos (esgrima e taekwondo). Coordenação de equipes em ambiente de alta pressão.">Gestión operativa de eventos olímpicos (esgrima y taekwondo). Coordinación de equipos en entorno de alta presión.</p>
                         <div class="gallery">
-                            <img src="portfolio/Olimpics_2016/Post%20TBT%202016_1.JPG" alt="Olimpíadas 1" onclick="openLightbox(this.src)">
-                            <img src="portfolio/Olimpics_2016/post%202016%20TBT_3.JPG" alt="Olimpíadas 3" onclick="openLightbox(this.src)">
+                            <img src="Olimpic5.JPEG" alt="Olimpíadas 5" onclick="openLightbox(this.src)">
+                            <img src="olimpic2.JPEG" alt="Olimpíadas 2" onclick="openLightbox(this.src)">
+                            <img src="olimpic9.JPEG" alt="Olimpíadas 9" onclick="openLightbox(this.src)">
                         </div>
                     </div>
                 </div>
 
-                <!-- Projetos Especiais -->
+                <!-- Coldplay Rock in Rio -->
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <img src="The%20game%20of%20their%20Lives.png" alt="The Game of Their Lives" onclick="openLightbox(this.src)">
+                        <img src="coldplay.jpeg" alt="Coldplay Rock in Rio" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Música | Documental</div>
+                        <h3 class="project-title">Coldplay at Rock in Rio</h3>
+                        <div class="project-meta">1ª Asistente de Dirección / Field Producer | 2022</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Documental exclusivo de la banda británica durante su histórica presentación en Rock in Rio. Coordinación internacional." data-en="Exclusive documentary of the British band during their historic Rock in Rio performance. International coordination." data-pt="Documentário exclusivo da banda britânica durante sua histórica apresentação no Rock in Rio. Coordenação internacional.">Documental exclusivo de la banda británica durante su histórica presentación en Rock in Rio.</p>
+                        <div class="gallery">
+                            <img src="coldplay1.jpeg" alt="Coldplay 1" onclick="openLightbox(this.src)">
+                            <img src="coldplay2.jpeg" alt="Coldplay 2" onclick="openLightbox(this.src)">
+                            <img src="coldplay3.jpeg" alt="Coldplay 3" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Game of Their Lives -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="thegameoftheirlives.png" alt="The Game of Their Lives" onclick="openLightbox(this.src)">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Largometraje Internacional</div>
@@ -906,16 +784,83 @@
                     </div>
                 </div>
 
+                <!-- Una Niñera Gloriosa -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="umababa1.jpeg" alt="Una Niñera Gloriosa" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Largometraje</div>
+                        <h3 class="project-title" data-es="Una Niñera Gloriosa" data-en="A Glorious Nanny" data-pt="Uma Babá Gloriosa">Una Niñera Gloriosa</h3>
+                        <div class="project-meta">1ª Asistente de Dirección | UNO Filmes | 2022-2023</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Gestión del equipo de dirección desde preproducción hasta final de rodaje, cumpliendo fechas y presupuesto." data-en="Management of directing team from pre-production to end of shooting, meeting deadlines and budget." data-pt="Gestão da equipe de direção desde pré-produção até final de filmagem, cumprindo prazos e orçamento.">Gestión del equipo de dirección desde preproducción hasta final de rodaje.</p>
+                        <div class="gallery">
+                            <img src="umababa2.jpeg" alt="Una Niñera 2" onclick="openLightbox(this.src)">
+                            <img src="umababa3.jpeg" alt="Una Niñera 3" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campanha Diesel -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="diesel1.jpeg" alt="Diesel" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Publicidad | Campaña Internacional</div>
+                        <h3 class="project-title">Diesel Campaign</h3>
+                        <div class="project-meta">Producción de Campaña | 2023</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Producción de campaña publicitaria internacional para la marca Diesel." data-en="International advertising campaign production for Diesel brand." data-pt="Produção de campanha publicitária internacional para a marca Diesel.">Producción de campaña publicitaria internacional para la marca Diesel.</p>
+                        <div class="gallery">
+                            <img src="diesel2.jpeg" alt="Diesel 2" onclick="openLightbox(this.src)">
+                            <img src="diesel3.jpeg" alt="Diesel 3" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENEL -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="enel.jpeg" alt="ENEL" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Publicidad | Campaña</div>
+                        <h3 class="project-title">ENEL Energía</h3>
+                        <div class="project-meta">Producción de Campaña | 2022</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Producción de campaña publicitaria para ENEL Energía." data-en="Advertising campaign production for ENEL Energy." data-pt="Produção de campanha publicitária para ENEL Energia.">Producción de campaña publicitaria para ENEL Energía.</p>
+                        <div class="gallery">
+                            <img src="enel1.jpeg" alt="ENEL 1" onclick="openLightbox(this.src)">
+                            <img src="enel4.jpeg" alt="ENEL 4" onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fernando Meireles -->
+                <div class="project-card reveal">
+                    <div class="project-image">
+                        <img src="fernandomeireles.png" alt="Fernando Meireles" onclick="openLightbox(this.src)">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-category">Documental</div>
+                        <h3 class="project-title">Projeto Fernando Meireles</h3>
+                        <div class="project-meta">Producción | 2023</div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">Producción de documental con Fernando Meireles.</p>
+                    </div>
+                </div>
+
                 <!-- Museu da Pessoa -->
                 <div class="project-card reveal">
                     <div class="project-image">
-                        <img src="CL_CARAJAS%2C%20PAR%C3%81.JPG" alt="Museu da Pessoa - Carajás" onclick="openLightbox(this.src)">
+                        <img src="museu1.jpeg" alt="Museu da Pessoa" onclick="openLightbox(this.src)">
                     </div>
                     <div class="project-content">
                         <div class="project-category">Documental | Amazonía</div>
                         <h3 class="project-title" data-es="Museo de la Persona - Carajás, Pará" data-en="Museum of the Person - Carajás, Pará" data-pt="Museu da Pessoa - Carajás, Pará">Museo de la Persona - Carajás, Pará</h3>
                         <div class="project-meta">Documental en la Amazonía brasileña</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Documental sobre la región de Carajás en la Amazonía para el Museo de la Persona." data-en="Documentary about the Carajás region in the Amazon for the Museum of the Person." data-pt="Documentário sobre a região de Carajás na Amazônia para o Museu da Pessoa.">Documental sobre la región de Carajás en la Amazonía para el Museo de la Persona.</p>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Documental sobre la región de Carajás en la Amazonía para el Museo de la Persona." data-en="Documentary about the Carajás region in the Amazon for the Museum of the Person." data-pt="Documentário sobre a região de Carajás na Amazônia para o Museu da Pessoa.">Documental sobre la región de Carajás en la Amazonía.</p>
+                        <div class="gallery">
+                            <img src="museu2.jpeg" alt="Museu 2" onclick="openLightbox(this.src)">
+                        </div>
                     </div>
                 </div>
             </div>

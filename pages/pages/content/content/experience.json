@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Pacto Brutal",
+    "role": "1st Assistant Director",
+    "description": {
+      "pt": "Série documental premiada.",
+      "es": "Serie documental premiada.",
+      "en": "Award-winning documentary series."
+    }
+  },
+  {
+    "title": "As Seguidoras",
+    "role": "1st Assistant Director",
+    "description": {
+      "pt": "Série de streaming.",
+      "es": "Serie de streaming.",
+      "en": "Streaming series."
+    }
+  },
+  {
+    "title": "Rio 2016",
+    "role": "Production Team",
+    "description": {
+      "pt": "Megaevento olímpico.",
+      "es": "Megaevento olímpico.",
+      "en": "Olympic mega event."
+    }
+  }
+]

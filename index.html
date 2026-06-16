@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Constancia Laviola | Directora & Productora Audiovisual</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary: #0a0a0a;
@@ -16,1024 +17,199 @@
             --gradient: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin:0; padding:0; box-sizing:border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--primary);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family:'Inter', sans-serif;
+            background:var(--primary);
+            color:var(--text);
+            line-height:1.6;
+            overflow-x:hidden;
         }
 
-        /* Language Selector */
         .lang-selector {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            display: flex;
-            gap: 0.5rem;
-            background: rgba(26, 26, 26, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem;
-            border-radius: 50px;
-            border: 1px solid rgba(201, 169, 98, 0.3);
+            position:fixed;
+            top:2rem;
+            right:2rem;
+            z-index:1000;
+            display:flex;
+            gap:0.5rem;
+            background:rgba(26,26,26,0.9);
+            backdrop-filter:blur(10px);
+            padding:0.5rem;
+            border-radius:50px;
+            border:1px solid rgba(201,169,98,0.3);
         }
 
         .lang-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background:transparent;
+            border:none;
+            color:var(--text-muted);
+            padding:0.5rem 1rem;
+            cursor:pointer;
+            border-radius:25px;
+            font-size:0.85rem;
+            text-transform:uppercase;
         }
 
-        .lang-btn.active {
-            background: var(--accent);
-            color: var(--primary);
-        }
+        .lang-btn.active { background:var(--accent); color:var(--primary); }
 
-        .lang-btn:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            background: var(--gradient);
-            overflow: hidden;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:var(--gradient);
+            position:relative;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(201, 169, 98, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(201, 169, 98, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-        }
+        .hero-content { text-align:center; max-width:900px; padding:2rem; }
 
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-            padding: 2rem;
-            max-width: 900px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            padding: 0.5rem 1.5rem;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            animation: fadeInDown 1s ease;
+        .hero-image {
+            width:200px;
+            height:200px;
+            border-radius:50%;
+            object-fit:cover;
+            border:3px solid var(--accent);
+            margin-bottom:2rem;
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, var(--accent-light) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease 0.2s both;
+            font-family:'Playfair Display', serif;
+            font-size:clamp(3rem,8vw,6rem);
+            background:linear-gradient(135deg,#fff,var(--accent-light));
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .hero-location {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: var(--accent);
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-
-        .hero-location::before {
-            content: '●';
-            color: var(--accent);
-            animation: pulse 2s infinite;
-        }
-
-        .hero-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            margin-bottom: 2rem;
-            box-shadow: 0 0 30px rgba(201, 169, 98, 0.3);
-        }
-
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-        }
-
-        .scroll-indicator::after {
-            content: '↓';
-            color: var(--accent);
-            font-size: 1.5rem;
-        }
-
-        /* About Section */
-        .about {
-            padding: 8rem 2rem;
-            background: var(--secondary);
-            position: relative;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            margin-bottom: 4rem;
-        }
-
-        .section-label {
-            color: var(--accent);
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text strong {
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-
-        .stat-card {
-            background: var(--primary);
-            padding: 2rem;
-            border: 1px solid rgba(201, 169, 98, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-        }
-
-        /* Projects Grid */
-        .projects {
-            padding: 8rem 2rem;
-            background: var(--secondary);
-        }
+        .projects { padding:8rem 2rem; background:var(--secondary); }
 
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+            gap:2rem;
         }
 
         .project-card {
-            background: var(--primary);
-            overflow: hidden;
-            position: relative;
-            border: 1px solid rgba(201, 169, 98, 0.1);
-            transition: all 0.4s ease;
+            background:var(--primary);
+            border:1px solid rgba(201,169,98,0.1);
+            transition:0.3s;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .project-image {
-            height: 250px;
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-            position: relative;
-            overflow: hidden;
+            transform:translateY(-10px);
+            border-color:var(--accent);
         }
 
         .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.05);
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-category {
-            color: var(--accent);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-meta {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-awards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .project-award {
-            background: rgba(201, 169, 98, 0.15);
-            color: var(--accent-light);
-            padding: 0.25rem 0.5rem;
-            font-size: 0.7rem;
-            border-radius: 3px;
-        }
-
-        /* Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            margin-top: 1rem;
+            width:100%;
+            height:250px;
+            object-fit:cover;
         }
 
         .gallery img {
-            width: 100%;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Skills Section */
-        .skills {
-            padding: 8rem 2rem;
-            background: var(--primary);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: var(--secondary);
-            padding: 2rem;
-            border: 1px solid rgba(201, 169, 98, 0.1);
-        }
-
-        .skill-category h3 {
-            color: var(--accent);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(201, 169, 98, 0.2);
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            padding: 0.5rem 0;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .skill-list li::before {
-            content: '→';
-            color: var(--accent);
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 8rem 2rem;
-            background: var(--secondary);
-            text-align: center;
-        }
-
-        .contact-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 2rem;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 3rem;
-        }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 1rem 2rem;
-            border: 1px solid rgba(201, 169, 98, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: var(--accent);
-            color: var(--primary);
-            border-color: var(--accent);
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 2rem;
-            background: var(--primary);
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(201, 169, 98, 0.1);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-10px); }
-            60% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .lang-selector {
-                top: 1rem;
-                right: 1rem;
-            }
-        }
-
-        /* Language Content */
-        .lang-content {
-            display: none;
-        }
-
-        .lang-content.active {
-            display: block;
-        }
-
-        /* Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: white;
-            font-size: 40px;
-            cursor: pointer;
+            width:100%;
+            height:80px;
+            object-fit:cover;
+            cursor:pointer;
         }
     </style>
 </head>
+
 <body>
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img src="" alt="Full size" id="lightbox-img">
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<!-- LANG -->
+<div class="lang-selector">
+    <button class="lang-btn active" onclick="switchLang('es')">ES</button>
+    <button class="lang-btn" onclick="switchLang('en')">EN</button>
+    <button class="lang-btn" onclick="switchLang('pt')">PT</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <img src="perfil.jpeg" class="hero-image">
+        <h1>CONSTANCIA LAVIOLA</h1>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects">
+<div class="projects-grid">
+
+    <!-- QOSSP -->
+    <div class="project-card">
+        <div class="project-image">
+            <img src="assets/assets/projects/qossp/quando-o-sol-se-poe-poster.png"
+                 alt="Quando O Sol Se Põe"
+                 onclick="openLightbox(this.src)">
+        </div>
+
+        <div class="gallery">
+            <img src="assets/assets/projects/qossp/qossp2.jpeg" onclick="openLightbox(this.src)">
+            <img src="assets/assets/projects/qossp/qossp3.jpeg" onclick="openLightbox(this.src)">
+            <img src="assets/assets/projects/qossp/qossp4.jpeg" onclick="openLightbox(this.src)">
+        </div>
     </div>
 
-    <!-- Language Selector -->
-    <div class="lang-selector">
-        <button class="lang-btn active" onclick="switchLang('es')">ES</button>
-        <button class="lang-btn" onclick="switchLang('en')">EN</button>
-        <button class="lang-btn" onclick="switchLang('pt')">PT</button>
+    <!-- PACTO BRUTAL -->
+    <div class="project-card">
+        <div class="project-image">
+            <img src="assets/assets/projects/pacto/pactobrutal0.jpeg">
+        </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <img src="perfil.jpeg" alt="Constancia Laviola" class="hero-image">
-            <div class="hero-badge" data-es="Productora & Directora" data-en="Producer & Director" data-pt="Produtora & Diretora">Productora & Directora</div>
-            <h1>CONSTANCIA LAVIOLA</h1>
-            <p class="hero-subtitle" data-es="26+ años transformando historias en experiencias audiovisuales de clase mundial" data-en="26+ years transforming stories into world-class audiovisual experiences" data-pt="26+ anos transformando histórias em experiências audiovisuais de classe mundial">26+ años transformando historias en experiencias audiovisuales de clase mundial</p>
-            <div class="hero-location">Madrid, España | Disponible Mundialmente</div>
+    <!-- O PIÃO -->
+    <div class="project-card">
+        <div class="project-image">
+            <img src="assets/assets/projects/opiao/opiao0.jpeg">
         </div>
-        <div class="scroll-indicator"></div>
-    </section>
+    </div>
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label" data-es="Perfil" data-en="Profile" data-pt="Perfil">Perfil</span>
-                <h2 class="section-title" data-es="Arquitecta de Producciones" data-en="Production Architect" data-pt="Arquiteta de Produções">Arquitecta de Producciones</h2>
-            </div>
-            
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <div class="lang-content active" id="about-es">
-                        <p>Con más de <strong>26 años de trayectoria</strong> en el sector audiovisual brasileño, he forjado una carrera sólida creando y coordinando producciones en publicidad, cine, televisión, documentales y reality shows. Mi enfoque combina <strong>pasión creativa, precisión técnica y dedicación absoluta</strong>.</p>
-                        <p>Soy <strong>trilingüe</strong> (portugués, español e inglés) con amplia experiencia en producciones internacionales, liderando equipos multidisciplinarios y gestionando proyectos complejos garantizando calidad, cumplimiento de plazos y eficiencia presupuestaria.</p>
-                        <p>Actualmente resido en Madrid, conectada directamente con la industria audiovisual europea, mientras continúo gestionando mi empresa de servicios de producción en Río de Janeiro, <strong>conectando continentes y creando puentes entre mercados</strong>.</p>
-                    </div>
-                    <div class="lang-content" id="about-en">
-                        <p>With over <strong>26 years of experience</strong> in the Brazilian audiovisual sector, I have built a solid career creating and coordinating productions in advertising, film, television, documentaries, and reality shows. My approach combines <strong>creative passion, technical precision, and absolute dedication</strong>.</p>
-                        <p>I am <strong>trilingual</strong> (Portuguese, Spanish, and English) with extensive experience in international productions, leading multidisciplinary teams and managing complex projects while ensuring quality, meeting deadlines, and budget efficiency.</p>
-                        <p>I currently reside in Madrid, directly connected to the European audiovisual industry, while continuing to manage my production services company in Rio de Janeiro, <strong>connecting continents and building bridges between markets</strong>.</p>
-                    </div>
-                    <div class="lang-content" id="about-pt">
-                        <p>Com mais de <strong>26 anos de trajetória</strong> no setor audiovisual brasileiro, construí uma carreira sólida criando e coordenando produções em publicidade, cinema, televisão, documentários e reality shows. Minha abordagem combina <strong>paixão criativa, precisão técnica e dedicação absoluta</strong>.</p>
-                        <p>Sou <strong>trilíngue</strong> (português, espanhol e inglês) com ampla experiência em produções internacionais, liderando equipes multidisciplinares e gerenciando projetos complexos garantindo qualidade, cumprimento de prazos e eficiência orçamentária.</p>
-                        <p>Atualmente resido em Madrid, conectada diretamente com a indústria audiovisual europeia, enquanto continuo gerenciando minha empresa de serviços de produção no Rio de Janeiro, <strong>conectando continentes e criando pontes entre mercados</strong>.</p>
-                    </div>
-                </div>
-                
-                <div class="stats-grid reveal">
-                    <div class="stat-card">
-                        <div class="stat-number">26+</div>
-                        <div class="stat-label" data-es="Años de Experiencia" data-en="Years Experience" data-pt="Anos de Experiência">Años de Experiencia</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label" data-es="Producciones" data-en="Productions" data-pt="Produções">Producciones</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label" data-es="Premios" data-en="Awards" data-pt="Prêmios">Premios</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label" data-es="Idiomas" data-en="Languages" data-pt="Idiomas">Idiomas</div>
-                    </div>
-                </div>
-            </div>
+    <!-- SEGIDORAS -->
+    <div class="project-card">
+        <div class="project-image">
+            <img src="assets/assets/projects/seguidoras/seguidoras1.jpeg">
         </div>
-    </section>
+    </div>
 
-    <!-- Featured Projects -->
-    <section class="projects">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label" data-es="Proyectos Destacados" data-en="Featured Projects" data-pt="Projetos Destacados">Proyectos Destacados</span>
-                <h2 class="section-title" data-es="Obras Premiadas" data-en="Award-Winning Works" data-pt="Obras Premiadas">Obras Premiadas</h2>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Quando O Sol Se Põe -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="<img src="assets/projects/qossp/quando-o-sol-se-põe-poster.png" alt="Quando O Sol Se Põe" onclick="openLightbox(this.src)">" alt="Quando O Sol Se Põe" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Cortometraje | Drama</div>
-                        <h3 class="project-title" data-es="Cuando el Sol se Pone" data-en="When the Sun Sets" data-pt="Quando o Sol se Põe">Cuando el Sol se Pone</h3>
-                        <div class="project-meta">Directora, Guionista & Productora | 2021</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Financiado por Retomada Cultural Río. Triple ganador internacional y 15+ selecciones en festivales globales." data-en="Funded by Retomada Cultural Rio. Triple international winner and 15+ selections at global festivals." data-pt="Financiado pela Retomada Cultural Rio. Triplo vencedor internacional e 15+ seleções em festivais globais.">Financiado por Retomada Cultural Río. Triple ganador internacional y 15+ selecciones en festivales globales.</p>
-                        <div class="project-awards">
-                            <span class="project-award">🏆 Toronto Independent FF</span>
-                            <span class="project-award">🏆 Kansas Arthouse FF</span>
-                            <span class="project-award">🏆 Sicily Independent</span>
-                        </div>
-                        <div class="gallery">
-                            <img src="qossp2.jpeg" alt="QOSSP 2" onclick="openLightbox(this.src)">
-                            <img src="qossp3.jpeg" alt="QOSSP 3" onclick="openLightbox(this.src)">
-                            <img src="qossp4.jpeg" alt="QOSSP 4" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pacto Brutal -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="pactobrutal0.jpeg" alt="Pacto Brutal" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">HBO Max | Documental</div>
-                        <h3 class="project-title" data-es="Pacto Brutal" data-en="Brutal Pact" data-pt="Pacto Brutal">Pacto Brutal</h3>
-                        <div class="project-meta">1ª Asistente de Dirección | 2021-2022</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Serie documental ganadora del Gran Premio del Cine Brasileño 2023. Reconstrucción meticulosa de uno de los casos más impactantes de Brasil." data-en="Award-winning documentary series at the 2023 Brazilian Cinema Grand Prix. Meticulous reconstruction of one of Brazil's most impactful cases." data-pt="Série documental vencedora do Grande Prêmio do Cinema Brasileiro 2023. Reconstrução meticulosa de um dos casos mais impactantes do Brasil.">Serie documental ganadora del Gran Premio del Cine Brasileño 2023.</p>
-                        <div class="project-awards">
-                            <span class="project-award">🏆 Gran Premio del Cine Brasileño</span>
-                            <span class="project-award">🏆 Mejor Serie Documental 2023</span>
-                        </div>
-                        <div class="gallery">
-                            <img src="pactobrutal1.jpeg" alt="Pacto Brutal 1" onclick="openLightbox(this.src)">
-                            <img src="pactobrutal7.jpeg" alt="Pacto Brutal 7" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- O Pião -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="opiao0.jpeg" alt="O Pião" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Cortometraje</div>
-                        <h3 class="project-title">O Pião</h3>
-                        <div class="project-meta">Productora & Co-Directora | 2018</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Ganador en San Diego Black Film Festival y seleccionado en 5 festivales internacionales." data-en="Winner at San Diego Black Film Festival and selected at 5 international festivals." data-pt="Vencedor no San Diego Black Film Festival e selecionado em 5 festivais internacionais.">Ganador en San Diego Black Film Festival y seleccionado en 5 festivales internacionales.</p>
-                        <div class="project-awards">
-                            <span class="project-award">🏆 San Diego Black Film Festival</span>
-                        </div>
-                        <div class="gallery">
-                            <img src="opiao1.jpeg" alt="O Pião 1" onclick="openLightbox(this.src)">
-                            <img src="opiao2.jpeg" alt="O Pião 2" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- As Seguidoras -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="seguidoras1.jpeg" alt="As Seguidoras" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Paramount+ | Serie</div>
-                        <h3 class="project-title" data-es="Las Seguidoras" data-en="The Followers" data-pt="As Seguidoras">Las Seguidoras</h3>
-                        <div class="project-meta">1ª Asistente de Dirección de Set | 2021</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Incorporación en plena fase de rodaje para sustituir por baja médica. Liderazgo inmediato de equipo." data-en="Joined mid-shoot to replace 1st AD on medical leave. Immediate team leadership." data-pt="Incorporação em plena fase de filmagem para substituir por baixa médica. Liderança imediata de equipe.">Incorporación en plena fase de rodaje para sustituir por baja médica. Liderazgo inmediato de equipo.</p>
-                        <div class="gallery">
-                            <img src="seguidoras2.jpeg" alt="As Seguidoras 2" onclick="openLightbox(this.src)">
-                            <img src="seguidoras3.jpeg" alt="As Seguidoras 3" onclick="openLightbox(this.src)">
-                            <img src="seguidoras5.jpeg" alt="As Seguidoras 5" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Juegos Olímpicos Río 2016 -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="Olimpic4.JPEG" alt="Olimpíadas 2016" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Eventos | Juegos Olímpicos</div>
-                        <h3 class="project-title" data-es="Juegos Olímpicos Río 2016" data-en="Rio 2016 Olympic Games" data-pt="Jogos Olímpicos Rio 2016">Juegos Olímpicos Río 2016</h3>
-                        <div class="project-meta">Assistant Venue Producer | Arena Carioca 3</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Gestión operativa de eventos olímpicos (esgrima y taekwondo). Coordinación de equipos en entorno de alta presión." data-en="Operational management of Olympic events (fencing and taekwondo). Team coordination in high-pressure environment." data-pt="Gestão operacional de eventos olímpicos (esgrima e taekwondo). Coordenação de equipes em ambiente de alta pressão.">Gestión operativa de eventos olímpicos (esgrima y taekwondo). Coordinación de equipos en entorno de alta presión.</p>
-                        <div class="gallery">
-                            <img src="Olimpic5.JPEG" alt="Olimpíadas 5" onclick="openLightbox(this.src)">
-                            <img src="olimpic2.JPEG" alt="Olimpíadas 2" onclick="openLightbox(this.src)">
-                            <img src="olimpic9.JPEG" alt="Olimpíadas 9" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Coldplay Rock in Rio -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="coldplay.jpeg" alt="Coldplay Rock in Rio" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Música | Documental</div>
-                        <h3 class="project-title">Coldplay at Rock in Rio</h3>
-                        <div class="project-meta">1ª Asistente de Dirección / Field Producer | 2022</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Documental exclusivo de la banda británica durante su histórica presentación en Rock in Rio. Coordinación internacional." data-en="Exclusive documentary of the British band during their historic Rock in Rio performance. International coordination." data-pt="Documentário exclusivo da banda britânica durante sua histórica apresentação no Rock in Rio. Coordenação internacional.">Documental exclusivo de la banda británica durante su histórica presentación en Rock in Rio.</p>
-                        <div class="gallery">
-                            <img src="coldplay1.jpeg" alt="Coldplay 1" onclick="openLightbox(this.src)">
-                            <img src="coldplay2.jpeg" alt="Coldplay 2" onclick="openLightbox(this.src)">
-                            <img src="coldplay3.jpeg" alt="Coldplay 3" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- The Game of Their Lives -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="thegameoftheirlives.png" alt="The Game of Their Lives" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Largometraje Internacional</div>
-                        <h3 class="project-title">The Game of Their Lives</h3>
-                        <div class="project-meta" data-es="Con Gerard Butler y Mandylor Costas" data-en="With Gerard Butler and Mandylor Costas" data-pt="Com Gerard Butler e Mandylor Costas">Con Gerard Butler y Mandylor Costas</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Producción internacional de largometraje con elenco de Hollywood." data-en="International feature film production with Hollywood cast." data-pt="Produção internacional de longa-metragem com elenco de Hollywood.">Producción internacional de largometraje con elenco de Hollywood.</p>
-                    </div>
-                </div>
-
-                <!-- Una Niñera Gloriosa -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="umababa1.jpeg" alt="Una Niñera Gloriosa" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Largometraje</div>
-                        <h3 class="project-title" data-es="Una Niñera Gloriosa" data-en="A Glorious Nanny" data-pt="Uma Babá Gloriosa">Una Niñera Gloriosa</h3>
-                        <div class="project-meta">1ª Asistente de Dirección | UNO Filmes | 2022-2023</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Gestión del equipo de dirección desde preproducción hasta final de rodaje, cumpliendo fechas y presupuesto." data-en="Management of directing team from pre-production to end of shooting, meeting deadlines and budget." data-pt="Gestão da equipe de direção desde pré-produção até final de filmagem, cumprindo prazos e orçamento.">Gestión del equipo de dirección desde preproducción hasta final de rodaje.</p>
-                        <div class="gallery">
-                            <img src="umababa2.jpeg" alt="Una Niñera 2" onclick="openLightbox(this.src)">
-                            <img src="umababa3.jpeg" alt="Una Niñera 3" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Campanha Diesel -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="diesel1.jpeg" alt="Diesel" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Publicidad | Campaña Internacional</div>
-                        <h3 class="project-title">Diesel Campaign</h3>
-                        <div class="project-meta">Producción de Campaña | 2023</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Producción de campaña publicitaria internacional para la marca Diesel." data-en="International advertising campaign production for Diesel brand." data-pt="Produção de campanha publicitária internacional para a marca Diesel.">Producción de campaña publicitaria internacional para la marca Diesel.</p>
-                        <div class="gallery">
-                            <img src="diesel2.jpeg" alt="Diesel 2" onclick="openLightbox(this.src)">
-                            <img src="diesel3.jpeg" alt="Diesel 3" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ENEL -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="enel.jpeg" alt="ENEL" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Publicidad | Campaña</div>
-                        <h3 class="project-title">ENEL Energía</h3>
-                        <div class="project-meta">Producción de Campaña | 2022</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Producción de campaña publicitaria para ENEL Energía." data-en="Advertising campaign production for ENEL Energy." data-pt="Produção de campanha publicitária para ENEL Energia.">Producción de campaña publicitaria para ENEL Energía.</p>
-                        <div class="gallery">
-                            <img src="enel1.jpeg" alt="ENEL 1" onclick="openLightbox(this.src)">
-                            <img src="enel4.jpeg" alt="ENEL 4" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Fernando Meireles -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="fernandomeireles.png" alt="Fernando Meireles" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Documental</div>
-                        <h3 class="project-title">Projeto Fernando Meireles</h3>
-                        <div class="project-meta">Producción | 2023</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">Producción de documental con Fernando Meireles.</p>
-                    </div>
-                </div>
-
-                <!-- Museu da Pessoa -->
-                <div class="project-card reveal">
-                    <div class="project-image">
-                        <img src="museu1.jpeg" alt="Museu da Pessoa" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-category">Documental | Amazonía</div>
-                        <h3 class="project-title" data-es="Museo de la Persona - Carajás, Pará" data-en="Museum of the Person - Carajás, Pará" data-pt="Museu da Pessoa - Carajás, Pará">Museo de la Persona - Carajás, Pará</h3>
-                        <div class="project-meta">Documental en la Amazonía brasileña</div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;" data-es="Documental sobre la región de Carajás en la Amazonía para el Museo de la Persona." data-en="Documentary about the Carajás region in the Amazon for the Museum of the Person." data-pt="Documentário sobre a região de Carajás na Amazônia para o Museu da Pessoa.">Documental sobre la región de Carajás en la Amazonía.</p>
-                        <div class="gallery">
-                            <img src="museu2.jpeg" alt="Museu 2" onclick="openLightbox(this.src)">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- OLIMPÍADAS -->
+    <div class="project-card">
+        <div class="project-image">
+            <img src="assets/assets/projects/olimpiadas/olimpic4.jpeg">
         </div>
-    </section>
+    </div>
 
-    <!-- Skills Section -->
-    <section class="skills">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label" data-es="Competencias" data-en="Skills" data-pt="Competências">Competencias</span>
-                <h2 class="section-title" data-es="Arsenal Profesional" data-en="Professional Arsenal" data-pt="Arsenal Profissional">Arsenal Profesional</h2>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category reveal">
-                    <h3 data-es="Dirección & Producción" data-en="Direction & Production" data-pt="Direção & Produção">Dirección & Producción</h3>
-                    <ul class="skill-list">
-                        <li data-es="1ª Asistente de Dirección" data-en="1st Assistant Direction" data-pt="1ª Assistente de Direção">1ª Asistente de Dirección</li>
-                        <li data-es="Dirección Cinematográfica" data-en="Film Direction" data-pt="Direção Cinematográfica">Dirección Cinematográfica</li>
-                        <li data-es="Field Production" data-en="Field Production" data-pt="Field Production">Field Production</li>
-                        <li data-es="Coordinación de Producción" data-en="Production Coordination" data-pt="Coordenação de Produção">Coordinación de Producción</li>
-                        <li data-es="Gestión de Localizaciones" data-en="Location Management" data-pt="Gestão de Locações">Gestión de Localizaciones</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category reveal">
-                    <h3 data-es="Gestión & Liderazgo" data-en="Management & Leadership" data-pt="Gestão & Liderança">Gestión & Liderazgo</h3>
-                    <ul class="skill-list">
-                        <li data-es="Liderazgo de Equipos Multiculturales" data-en="Multicultural Team Leadership" data-pt="Liderança de Equipes Multiculturais">Liderazgo de Equipos Multiculturales</li>
-                        <li data-es="Gestión de Presupuestos" data-en="Budget Management" data-pt="Gestão de Orçamentos">Gestión de Presupuestos</li>
-                        <li data-es="Planificación & Scheduling" data-en="Planning & Scheduling" data-pt="Planejamento & Scheduling">Planificación & Scheduling</li>
-                        <li data-es="Resolución de Crisis" data-en="Crisis Resolution" data-pt="Resolução de Crises">Resolución de Crisis</li>
-                        <li data-es="Negociación con Proveedores" data-en="Vendor Negotiation" data-pt="Negociação com Fornecedores">Negociación con Proveedores</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category reveal">
-                    <h3 data-es="Herramientas Técnicas" data-en="Technical Tools" data-pt="Ferramentas Técnicas">Herramientas Técnicas</h3>
-                    <ul class="skill-list">
-                        <li>Movie Magic Scheduling</li>
-                        <li>DaVinci Resolve Studio</li>
-                        <li>Microsoft Office (Excel Avanzado)</li>
-                        <li>Google Workspace</li>
-                        <li data-es="Gestión Documental" data-en="Document Management" data-pt="Gestão Documental">Gestión Documental</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category reveal">
-                    <h3 data-es="Idiomas" data-en="Languages" data-pt="Idiomas">Idiomas</h3>
-                    <ul class="skill-list">
-                        <li data-es="Portugués: Nativo" data-en="Portuguese: Native" data-pt="Português: Nativo">Portugués: Nativo</li>
-                        <li data-es="Inglés: Fluido/Profesional" data-en="English: Fluent/Professional" data-pt="Inglês: Fluente/Profissional">Inglés: Fluido/Profesional</li>
-                        <li data-es="Español: Avanzado" data-en="Spanish: Advanced" data-pt="Espanhol: Avançado">Español: Avanzado</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- COLdPLAY -->
+    <div class="project-card">
+        <div class="project-image">
+            <img src="assets/assets/projects/coldplay/coldplay.jpeg">
         </div>
-    </section>
+    </div>
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <div class="container">
-            <div class="contact-content reveal">
-                <span class="section-label" data-es="Contacto" data-en="Contact" data-pt="Contato">Contacto</span>
-                <h2 data-es="Construyamos algo extraordinario" data-en="Let's build something extraordinary" data-pt="Vamos construir algo extraordinário">Construyamos algo extraordinario</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;" data-es="Disponible para proyectos internacionales, coproducciones España-Brasil-Europa y oportunidades de dirección y producción." data-en="Available for international projects, Spain-Brazil-Europe co-productions and direction and production opportunities." data-pt="Disponível para projetos internacionais, coproduções Espanha-Brasil-Europa e oportunidades de direção e produção.">Disponible para proyectos internacionales, coproducciones España-Brasil-Europa y oportunidades de dirección y producción.</p>
-                
-                <div class="contact-links">
-                    <a href="mailto:constancia66@gmail.com" class="contact-link">
-                        <span>📧</span> constancia66@gmail.com
-                    </a>
-                    <a href="tel:+34653234406" class="contact-link">
-                        <span>📱</span> +34 653 234 406
-                    </a>
-                    <a href="https://www.linkedin.com/in/constancialaviolacarreiro/" target="_blank" class="contact-link">
-                        <span>💼</span> LinkedIn
-                    </a>
-                    <a href="https://www.imdb.com/name/nm0492121/" target="_blank" class="contact-link">
-                        <span>🎬</span> IMDb
-                    </a>
-                    <a href="https://vimeo.com/constancialaviola" target="_blank" class="contact-link">
-                        <span>🎥</span> Vimeo
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Constancia Laviola. <span data-es="Todos los derechos reservados." data-en="All rights reserved." data-pt="Todos os direitos reservados.">Todos los derechos reservados.</span></p>
-        <p style="margin-top: 0.5rem; font-size: 0.75rem; color: var(--accent);">Madrid, España | Rio de Janeiro, Brasil</p>
-    </footer>
+<script>
+function openLightbox(src){
+    document.getElementById('lightbox').style.display='flex';
+    document.getElementById('lightbox-img').src=src;
+}
 
-    <script>
-        // Language Switcher
-        function switchLang(lang) {
-            // Update buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
+function closeLightbox(){
+    document.getElementById('lightbox').style.display='none';
+}
 
-            // Update content
-            document.querySelectorAll('.lang-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            
-            const selectedContent = document.getElementById('about-' + lang);
-            if (selectedContent) {
-                selectedContent.classList.add('active');
-            }
+function switchLang(lang){
+    document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+    event.target.classList.add('active');
+}
+</script>
 
-            // Update all data attributes
-            document.querySelectorAll('[data-es]').forEach(el => {
-                const text = el.getAttribute('data-' + lang);
-                if (text && !el.classList.contains('lang-content')) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = text;
-                    } else {
-                        el.innerHTML = text;
-                    }
-                }
-            });
-
-            // Update html lang
-            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
-        }
-
-        // Lightbox
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        // Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealOnScroll = () => {
-            revealElements.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Trigger once on load
-
-        // Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>

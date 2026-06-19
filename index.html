@@ -1,3 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Constância Laviola | Senior 1st Assistant Director</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#080808;
+--bg2:#111111;
+--gold:#c9a962;
+--gold-light:#e6d5a3;
+--text:#f5f5f5;
+--muted:#9a9a9a;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+display:block;
+max-width:100%;
+}
+
+.lang-selector{
+position:fixed;
+top:20px;
+right:20px;
+z-index:9999;
+display:flex;
+gap:8px;
+padding:8px;
+border-radius:50px;
+background:rgba(0,0,0,.75);
+backdrop-filter:blur(10px);
+border:1px solid rgba(201,169,98,.2);
+}
+
+.lang-btn{
+background:transparent;
+border:none;
+cursor:pointer;
+padding:8px 14px;
+border-radius:30px;
+color:#999;
+font-weight:600;
+}
+
+.lang-btn.active{
+background:var(--gold);
+color:black;
+}
+
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:24px 60px;
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.95),
+rgba(0,0,0,0)
+);
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+font-weight:700;
+letter-spacing:1px;
+color:white;
+z-index:1001;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+font-size:.85rem;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
+.nav-links a:hover{
+color:var(--gold);
+}
+
+.hero{
+height:100vh;
+position:relative;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+}
+
+.hero-slider{
+position:absolute;
+inset:0;
+}
+
+.hero-slider img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+object-position:center 30%;
+opacity:0;
+transition:opacity 2s ease;
+}
+
+.hero-slider img.active{
+opacity:1;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+rgba(0,0,0,.30),
+rgba(0,0,0,.85)
+);
+}
+
+.hero-content{
+position:relative;
+z-index:10;
+text-align:center;
+max-width:1000px;
+padding-bottom:60px;
+}
+
+.hero-name{
+font-family:'Playfair Display',serif;
+font-size:clamp(3rem,6vw,6rem);
+font-weight:700;
+margin-bottom:20px;
+color:white;
+}
+
+.hero-buttons{
+margin:25px 0;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.hero-role-main{
+font-size:clamp(1.2rem,2vw,1.8rem);
+font-weight:600;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-top:10px;
+margin-bottom:15px;
+color:var(--gold);
+}
+
+.hero-role-secondary{
+font-size:1.05rem;
+margin-bottom:15px;
+color:white;
+}
+
+.hero-description{
+margin-top:20px;
+font-size:1rem;
+line-height:1.7;
+color:#e0e0e0;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:40px;
+transition:.3s;
+}
+
+.btn-gold{
+background:var(--gold);
+color:black;
+font-weight:700;
+}
+
+.btn-dark{
+border:1px solid var(--gold);
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.section{
+padding:90px 8%;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title span{
+color:var(--gold);
+}
+
+.about{
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:35% 65%;
+gap:60px;
+align-items:start;
+}
+
+.about-photo img{
+border-radius:12px;
+}
+
+.about-caption{
+margin-top:20px;
+font-size:.95rem;
+line-height:1.8;
+color:#ddd;
+}
+
+.about-text{
+font-size:1rem;
+line-height:1.9;
+color:#ddd;
+}
+
+.about-text p{
+margin-bottom:22px;
+}
+
+.featured-grid{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:#131313;
+border:1px solid rgba(255,255,255,.05);
+overflow:hidden;
+transition:.4s;
+}
+
+.project-card:hover{
+transform:translateY(-8px);
+border-color:var(--gold);
+}
+
+.project-card img{
+width:100%;
+height:420px;
+object-fit:cover;
+}
+
+.project-info{
+padding:20px;
+}
+
+.project-info h4{
+font-size:1.15rem;
+margin-bottom:10px;
+}
+
+.project-category{
+display:inline-block;
+margin-bottom:12px;
+padding:5px 10px;
+font-size:.72rem;
+font-weight:700;
+letter-spacing:1px;
+border-radius:20px;
+color:var(--gold);
+border:1px solid rgba(201,169,98,.3);
+background:rgba(201,169,98,.12);
+}
+
+.project-info p{
+color:#cfcfcf;
+line-height:1.6;
+font-size:.92rem;
+}
+
+.view-project{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+border-radius:30px;
+border:1px solid var(--gold);
+color:var(--gold);
+font-size:.85rem;
+font-weight:600;
+}
+
+.view-project:hover{
+background:var(--gold);
+color:black;
+}
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+}
+
+.navbar{
+padding:20px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+.logo{
+font-size:1.5rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="lang-selector">
+
+<button class="lang-btn active">EN</button>
+<button class="lang-btn">ES</button>
+<button class="lang-btn">PT</button>
+
+</div>
+
+<nav class="navbar">
+
+<div class="logo">
+CONSTÂNCIA LAVIOLA
+</div>
+
+<div class="nav-links">
+
+<a href="#about">About</a>
+<a href="#featured">Featured</a>
+<a href="#filmography">Filmography</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
 <section class="hero">
 
 <div class="hero-slider">
@@ -39,97 +431,641 @@ Producer • Field Producer • Writer & Director
 </div>
 
 <div class="hero-description">
-
 Based in Madrid
-
 <br>
-
 Available Across Spain & Europe
+</div>
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<h2 class="section-title">
+About <span>Me</span>
+</h2>
+
+<div class="about">
+
+<div class="about-photo">
+
+<img src="assets/assets/projects/hero/constancia-hero.jpeg">
+
+<div class="about-caption">
+
+Constância Laviola
+
+<br><br>
+
+1st Assistant Director • Field Producer • Producer
+
+<br><br>
+
+Based in Madrid with immediate availability for productions across Spain and Europe.
+
+<br><br>
+
+Trilingual: Spanish • English • Portuguese
+
+<br><br>
+
+Experienced in international productions, streaming platforms, feature films, documentaries, advertising and live events.
+
+</div>
+
+</div>
+
+<div class="about-text">
+
+<p>
+Constancia Laviola, 1st Assistant Director and Field Producer with extensive experience in high-demand international productions.
+</p>
+
+<p>
+Based in Madrid and available across Spain and Europe, she works fluently in Spanish, English and Portuguese, bringing strong value to local productions, international co-productions and projects involving Ibero-American talent.
+</p>
+
+<p>
+With more than 20 years of experience in film, television, streaming platforms, documentaries, advertising and live events, she has worked on productions for HBO, Prime Video, FOX Films, major international brands and large-scale events such as the Rio 2016 Olympic Games.
+</p>
+
+<p>
+As a 1st Assistant Director she specializes in connecting creative vision, production planning and logistical execution, ensuring efficient communication between departments and smooth operation on complex sets.
+</p>
+
+<p>
+Projects such as Pacto Brutal (HBO), As Seguidoras (Prime Video), Woman on Top (FOX) and numerous international productions have strengthened her ability to lead teams under pressure, solve problems in real time and deliver results in highly demanding environments.
+</p>
+
+<p>
+Alongside her production career, she develops original content as a writer, producer and director, including award-winning short films and feature projects currently in development.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="featured" class="section">
+
+<h2 class="section-title">
+Featured <span>Projects</span>
+</h2>
+
+<div class="featured-grid">
+
+<div class="project-card">
+
+<img src="assets/assets/projects/pacto-brutal/poster-pacto-brutal.png">
+
+<div class="project-info">
+
+<h4>Pacto Brutal</h4>
+
+<span class="project-category">
+SERIES
+</span>
+
+<p>
+HBO Original Documentary Series
+<br>
+1st Assistant Director
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/seguidoras/as-seguidoras-poster.png">
+
+<div class="project-info">
+
+<h4>As Seguidoras</h4>
+
+<span class="project-category">
+SERIES
+</span>
+
+<p>
+Prime Video Original Series
+<br>
+1st Assistant Director
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/woman-on-top/woman-on-top-poster.png">
+
+<div class="project-info">
+
+<h4>Woman on Top</h4>
+
+<span class="project-category">
+FEATURE FILM
+</span>
+
+<p>
+2nd Assistant Director (Brazil)
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/gaycation/gaycation-poster.png">
+
+<div class="project-info">
+
+<h4>Gaycation Brazil</h4>
+
+<span class="project-category">
+DOCUMENTARY
+</span>
+
+<p>
+1st AD • Local Fixer
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/coldplay/coldplay-01.jpeg">
+
+<div class="project-info">
+
+<h4>Coldplay</h4>
+
+<span class="project-category">
+DOCUMENTARY
+</span>
+
+<p>
+Mini Documentary
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/my-father/my-father-poster.png">
+
+<div class="project-info">
+
+<h4>My Father</h4>
+
+<span class="project-category">
+FEATURE FILM
+</span>
+
+<p>
+2nd Assistant Director (Brazil)
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
 
 </div>
 
 </div>
 
 </section>
-.logo{
 
-font-family:'Playfair Display',serif;
+<section class="section">
 
-font-size:3rem;
+<h2 class="section-title">
+Award Winning <span>Projects</span>
+</h2>
 
-font-weight:700;
+<div class="featured-grid">
 
-letter-spacing:1px;
+<div class="project-card">
 
-color:white;
+<img src="assets/assets/projects/qossp/quando-o-sol-se-poe-poster.png">
 
+<div class="project-info">
+
+<h4>When the Sun Goes Down</h4>
+
+<span class="project-category">
+AWARD WINNING SHORT FILM
+</span>
+
+<p>
+Writer • Director • Producer
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/opiao/opiao-poster.png">
+
+<div class="project-info">
+
+<h4>O Pião</h4>
+
+<span class="project-category">
+AWARD WINNING SHORT FILM
+</span>
+
+<p>
+Producer • Co-Director
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="filmography" class="section">
+
+<h2 class="section-title">
+Film<span>ography</span>
+</h2>
+
+<div class="featured-grid">
+
+<div class="project-card">
+
+<img src="assets/assets/projects/xango/xango-poster.png">
+
+<div class="project-info">
+
+<h4>O Xangô de Baker Street</h4>
+
+<span class="project-category">
+FEATURE FILM
+</span>
+
+<p>
+Production Casting
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/the-game/the-game-of-their-lives-poster.png">
+
+<div class="project-info">
+
+<h4>The Game of Their Lives</h4>
+
+<span class="project-category">
+FEATURE FILM
+</span>
+
+<p>
+2nd Assistant Director (Brazil)
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/uma-baba-gloriosa/uma-baba-gloriosa-poster.png">
+
+<div class="project-info">
+
+<h4>Uma Babá Gloriosa</h4>
+
+<span class="project-category">
+FEATURE FILM
+</span>
+
+<p>
+Feature Film
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/rush/rush-poster.png">
+
+<div class="project-info">
+
+<h4>Rush in Rio</h4>
+
+<span class="project-category">
+DOCUMENTARY
+</span>
+
+<p>
+1st Assistant Director • Field Producer
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section class="section">
+
+<h2 class="section-title">
+Advertising <span>/ Branded Content</span>
+</h2>
+
+<div class="featured-grid">
+
+<div class="project-card">
+<img src="assets/assets/projects/ballantines/ballantines-poster.png">
+<div class="project-info">
+<h4>Ballantines</h4>
+<span class="project-category">ADVERTISING</span>
+<p>Production Director • 1st AD</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/enel/enel-poster.png">
+<div class="project-info">
+<h4>Enel</h4>
+<span class="project-category">ADVERTISING</span>
+<p>Executive Producer • 1st AD</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/diesel/diesel-poster.png">
+<div class="project-info">
+<h4>Diesel</h4>
+<span class="project-category">ADVERTISING</span>
+<p>1st AD (Brazil)</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/olympikus/olympikus-poster.png">
+<div class="project-info">
+<h4>Olympikus</h4>
+<span class="project-category">ADVERTISING</span>
+<p>1st Assistant Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/star-aliance/star-aliance-poster.png">
+<div class="project-info">
+<h4>Star Alliance</h4>
+<span class="project-category">BRANDED CONTENT</span>
+<p>1st AD • Local Fixer</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Development
+</h2>
+
+<div class="featured-grid">
+
+<div class="project-card">
+<img src="assets/assets/projects/rio-radical/rio-radical-poster.png">
+<div class="project-info">
+<h4>Rio Radical</h4>
+<span class="project-category">IN DEVELOPMENT</span>
+<p>Creator • Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/tinderela/tinderela-poster.png">
+<div class="project-info">
+<h4>Tinderela</h4>
+<span class="project-category">FEATURE FILM IN DEVELOPMENT</span>
+<p>Writer • Creator • Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/shivanne-y-alberto/shivanne-poster.png">
+<div class="project-info">
+<h4>Shivanne & Alberto</h4>
+<span class="project-category">FEATURE FILM IN DEVELOPMENT</span>
+<p>Producer • Director</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Events
+</h2>
+
+<div class="featured-grid">
+
+<div class="project-card">
+<img src="assets/assets/projects/rock-in-rio/rock-in-rio-poster.png">
+<div class="project-info">
+<h4>Rock in Rio</h4>
+<span class="project-category">LIVE EVENT</span>
+<p>Backstage Production</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/olimpics-rio2016/olimpics-2016-poster.png">
+<div class="project-info">
+<h4>Rio 2016 Olympic Games</h4>
+<span class="project-category">LIVE EVENT</span>
+<p>Associate Venue Producer</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Telenovelas
+</h2>
+
+<div class="featured-grid">
+
+<div class="project-card">
+<img src="assets/assets/projects/telenovelas/a-lei-e-o-crime.png">
+<div class="project-info">
+<h4>A Lei e o Crime</h4>
+<span class="project-category">TELENOVELA</span>
+<p>Assistant Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/telenovelas/alta-estacao.png">
+<div class="project-info">
+<h4>Alta Estação</h4>
+<span class="project-category">TELENOVELA</span>
+<p>Assistant Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/telenovelas/bicho-do-mato.png">
+<div class="project-info">
+<h4>Bicho do Mato</h4>
+<span class="project-category">TELENOVELA</span>
+<p>Production Casting Assistant</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/telenovelas/os-mutantes.png">
+<div class="project-info">
+<h4>Os Mutantes</h4>
+<span class="project-category">TELENOVELA</span>
+<p>Assistant Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/telenovelas/promessas-de-amor.png">
+<div class="project-info">
+<h4>Promessas de Amor</h4>
+<span class="project-category">TELENOVELA</span>
+<p>Assistant Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/telenovelas/vidas-opostas.png">
+<div class="project-info">
+<h4>Vidas Opostas</h4>
+<span class="project-category">TELENOVELA</span>
+<p>Assistant Director</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<footer id="contact" class="section">
+
+<h2 class="section-title">
+Contact
+</h2>
+
+<div style="text-align:center;">
+
+<p>Madrid, Spain</p>
+
+<br>
+
+<a href="https://www.imdb.com/name/nm0492121/" target="_blank">
+IMDb
+</a>
+
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+<a href="https://www.linkedin.com/in/constancialaviolacarreiro/" target="_blank">
+LinkedIn
+</a>
+
+<br><br>
+
+<p>
+© Constância Laviola
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+const slides =
+document.querySelectorAll('.hero-slider img');
+
+let currentSlide = 0;
+
+setInterval(()=>{
+
+slides[currentSlide]
+.classList.remove('active');
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
 }
-.hero-slider img{
 
-position:absolute;
+slides[currentSlide]
+.classList.add('active');
 
-width:100%;
+},5000);
 
-height:100%;
+</script>
 
-object-fit:cover;
-
-object-position:center 30%;
-
-opacity:0;
-
-transition:opacity 2s ease;
-
-}
-.hero-content{
-
-position:relative;
-
-z-index:10;
-
-text-align:center;
-
-max-width:1000px;
-
-padding-bottom:60px;
-
-}
-.hero-name{
-
-font-family:'Playfair Display',serif;
-
-font-size:clamp(3rem,6vw,6rem);
-
-font-weight:700;
-
-margin-bottom:25px;
-
-color:white;
-
-}
-.hero-role-main{
-
-font-size:clamp(1.2rem,2vw,1.8rem);
-
-font-weight:600;
-
-letter-spacing:3px;
-
-text-transform:uppercase;
-
-margin-top:20px;
-
-margin-bottom:15px;
-
-color:var(--gold);
-
-}
-.hero-role-secondary{
-
-font-size:1.05rem;
-
-margin-bottom:15px;
-
-color:white;
-
-}
+</body>
+</html>

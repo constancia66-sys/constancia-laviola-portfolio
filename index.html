@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,9 +14,9 @@
 
 :root{
 --bg:#080808;
---bg2:#121212;
+--bg2:#111111;
 --gold:#c9a962;
---gold-light:#e5d4a3;
+--gold-light:#e6d5a3;
 --text:#f5f5f5;
 --muted:#9a9a9a;
 }
@@ -30,55 +32,69 @@ scroll-behavior:smooth;
 }
 
 body{
+font-family:'Inter',sans-serif;
 background:var(--bg);
 color:var(--text);
-font-family:'Inter',sans-serif;
 overflow-x:hidden;
 }
 
 a{
 text-decoration:none;
+color:inherit;
 }
 
 img{
-max-width:100%;
 display:block;
+max-width:100%;
 }
 
 .lang-selector{
+
 position:fixed;
+
 top:20px;
 right:20px;
+
 z-index:9999;
 
 display:flex;
 gap:8px;
 
-background:rgba(0,0,0,.7);
-backdrop-filter:blur(12px);
-
 padding:8px;
-border-radius:40px;
+
+border-radius:50px;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(10px);
+
 border:1px solid rgba(201,169,98,.2);
+
 }
 
 .lang-btn{
+
 background:transparent;
 border:none;
-cursor:pointer;
 
-color:#999;
+cursor:pointer;
 
 padding:8px 14px;
 
 border-radius:30px;
 
+color:#999;
+
 font-weight:600;
+
 }
 
 .lang-btn.active{
+
 background:var(--gold);
+
 color:black;
+
 }
 
 .navbar{
@@ -97,7 +113,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:25px 60px;
+padding:24px 60px;
 
 background:
 linear-gradient(
@@ -112,30 +128,29 @@ rgba(0,0,0,0)
 
 font-family:'Playfair Display',serif;
 
-font-size:1.2rem;
-
-letter-spacing:2px;
+font-size:1.7rem;
 
 font-weight:700;
+
+letter-spacing:2px;
 
 }
 
 .nav-links{
 
 display:flex;
+
 gap:30px;
 
 }
 
 .nav-links a{
 
-color:white;
-
-font-size:.9rem;
-
-text-transform:uppercase;
+font-size:.85rem;
 
 letter-spacing:1px;
+
+text-transform:uppercase;
 
 }
 
@@ -152,8 +167,8 @@ position:relative;
 overflow:hidden;
 
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:flex-end;
 
 }
 
@@ -175,7 +190,7 @@ object-fit:cover;
 
 opacity:0;
 
-transition:opacity 1.8s ease;
+transition:opacity 2s ease;
 
 }
 
@@ -189,10 +204,9 @@ position:absolute;
 inset:0;
 
 background:
-
 linear-gradient(
-rgba(0,0,0,.40),
-rgba(0,0,0,.75)
+rgba(0,0,0,.35),
+rgba(0,0,0,.8)
 );
 
 }
@@ -206,25 +220,27 @@ text-align:center;
 
 max-width:900px;
 
-padding:40px;
+padding-bottom:120px;
+padding-left:30px;
+padding-right:30px;
 
 }
 
 .hero-role-main{
 
-font-size:clamp(2rem,4vw,4rem);
+font-size:clamp(1.8rem,3vw,3rem);
 
 font-weight:700;
 
 color:var(--gold);
 
-margin-bottom:15px;
+margin-bottom:10px;
 
 }
 
 .hero-role{
 
-font-size:clamp(1.3rem,2vw,2rem);
+font-size:1.2rem;
 
 margin-bottom:8px;
 
@@ -232,25 +248,23 @@ margin-bottom:8px;
 
 .hero-description{
 
-margin-top:30px;
+margin-top:20px;
 
-font-size:1.1rem;
+font-size:1rem;
 
 line-height:1.7;
 
-color:#ddd;
+color:#e0e0e0;
 
 }
 
 .hero-buttons{
 
+margin-top:30px;
+
 display:flex;
-
 justify-content:center;
-
 gap:15px;
-
-margin-top:35px;
 
 flex-wrap:wrap;
 
@@ -285,12 +299,14 @@ color:white;
 }
 
 .btn:hover{
+
 transform:translateY(-3px);
+
 }
 
 .section{
 
-padding:100px 8%;
+padding:90px 8%;
 
 }
 
@@ -312,33 +328,51 @@ color:var(--gold);
 
 .about{
 
-max-width:1200px;
+max-width:1300px;
 
 margin:auto;
 
 display:grid;
 
-grid-template-columns:1fr 1fr;
+grid-template-columns:35% 65%;
 
 gap:60px;
 
-align-items:center;
+align-items:start;
 
 }
 
-.about-image img{
+.about-photo img{
 
-border-radius:15px;
+border-radius:12px;
+
+}
+
+.about-caption{
+
+margin-top:20px;
+
+font-size:.95rem;
+
+line-height:1.8;
+
+color:#ddd;
+
+}
+
+.about-text{
+
+font-size:1rem;
+
+line-height:1.9;
+
+color:#ddd;
 
 }
 
 .about-text p{
 
-margin-bottom:20px;
-
-color:#d8d8d8;
-
-line-height:1.8;
+margin-bottom:22px;
 
 }
 
@@ -347,21 +381,21 @@ line-height:1.8;
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(320px,1fr));
+repeat(auto-fit,minmax(280px,1fr));
 
-gap:30px;
+gap:25px;
 
 }
 
 .project-card{
 
-background:#141414;
+background:#131313;
 
 border:1px solid rgba(255,255,255,.05);
 
-transition:.4s;
-
 overflow:hidden;
+
+transition:.4s;
 
 }
 
@@ -376,8 +410,7 @@ border-color:var(--gold);
 .project-card img{
 
 width:100%;
-
-height:450px;
+height:420px;
 
 object-fit:cover;
 
@@ -385,72 +418,77 @@ object-fit:cover;
 
 .project-info{
 
-padding:25px;
+padding:20px;
 
 }
 
-.project-info h3{
+.project-info h4{
+
+font-size:1.15rem;
 
 margin-bottom:10px;
 
-font-size:1.3rem;
+}
+
+.project-category{
+
+display:inline-block;
+
+margin-bottom:12px;
+
+padding:5px 10px;
+
+font-size:.72rem;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+border-radius:20px;
+
+color:var(--gold);
+
+border:1px solid rgba(201,169,98,.3);
+
+background:rgba(201,169,98,.12);
 
 }
 
 .project-info p{
 
-color:#bdbdbd;
+color:#cfcfcf;
 
 line-height:1.6;
 
-}
-
-.category{
-
-margin-top:80px;
+font-size:.92rem;
 
 }
 
-.category-title{
+.view-project{
 
-font-size:2rem;
+display:inline-block;
 
-font-family:'Playfair Display',serif;
+margin-top:15px;
 
-margin-bottom:30px;
+padding:10px 18px;
+
+border-radius:30px;
+
+border:1px solid var(--gold);
 
 color:var(--gold);
 
-}
+font-size:.85rem;
 
-.projects-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(280px,1fr));
-
-gap:25px;
+font-weight:600;
 
 }
 
-.footer{
+.view-project:hover{
 
-padding:60px 20px;
+background:var(--gold);
 
-text-align:center;
-
-background:#050505;
-
-margin-top:100px;
-
-}
-
-.footer a{
-
-color:var(--gold);
-
-margin:0 10px;
+color:black;
 
 }
 
@@ -468,8 +506,8 @@ padding:20px;
 grid-template-columns:1fr;
 }
 
-.hero-role-main{
-font-size:2rem;
+.logo{
+font-size:1.2rem;
 }
 
 }
@@ -530,30 +568,26 @@ Producer
 </div>
 
 <div class="hero-role">
+Field Producer
+</div>
+
+<div class="hero-role">
 Writer & Director
 </div>
 
 <div class="hero-description">
 
-25+ years of experience in Feature Films,
-Streaming Platforms, Television,
-Advertising and International Productions.
+Based in Madrid • Available Across Spain & Europe
 
 </div>
 
 <div class="hero-buttons">
 
-<a
-target="_blank"
-href="https://www.imdb.com/name/nm0492121/"
-class="btn btn-gold">
+<a href="https://www.imdb.com/name/nm0492121/" target="_blank" class="btn btn-gold">
 IMDb
 </a>
 
-<a
-target="_blank"
-href="https://www.linkedin.com/in/constancialaviolacarreiro/"
-class="btn btn-dark">
+<a href="https://www.linkedin.com/in/constancialaviolacarreiro/" target="_blank" class="btn btn-dark">
 LinkedIn
 </a>
 
@@ -566,38 +600,51 @@ LinkedIn
 <section id="about" class="section">
 
 <h2 class="section-title">
-About <span>Constância</span>
+About <span>Me</span>
 </h2>
 
 <div class="about">
 
-<div class="about-image">
+<div class="about-photo">
 
 <img src="assets/assets/projects/hero/constancia-hero.jpeg">
+
+<div class="about-caption">
+
+Constância Laviola
+
+1st Assistant Director • Field Producer • Producer
+
+Based in Madrid with immediate availability for productions across Spain and Europe.
+
+Trilingual: Spanish • English • Portuguese
+
+Experienced in international productions, streaming platforms, feature films, documentaries, advertising and live events.
+
+</div>
 
 </div>
 
 <div class="about-text">
 
 <p>
-Senior 1st Assistant Director, Producer,
-Writer and Director with more than
-25 years of experience in international
-film, television, streaming, advertising
-and live events productions.
+With more than 20 years of experience in film, television, streaming platforms, documentaries, advertising and live events, I have worked on productions for HBO, Prime Video, FOX Films, major international brands and large-scale events such as the Rio 2016 Olympic Games.
 </p>
 
 <p>
-Extensive experience coordinating
-large-scale productions, international
-crews and complex shooting schedules
-across Brazil, Europe and the United States.
+As a 1st Assistant Director, I specialize in coordinating complex productions, managing schedules, supervising large crews and ensuring seamless communication between creative and technical departments.
 </p>
 
 <p>
-Credits include HBO, Prime Video,
-FOX Films, Rio 2016 Olympic Games
-and major international advertising campaigns.
+Projects such as Pacto Brutal (HBO), As Seguidoras (Prime Video), Woman on Top (FOX) and numerous international productions have strengthened my ability to lead teams under pressure, solve problems in real time and deliver results in highly demanding environments.
+</p>
+
+<p>
+Alongside my production career, I also develop and produce original content as a writer and director, including internationally awarded short films and feature projects currently in development.
+</p>
+
+<p>
+I bring strong organizational skills, leadership, attention to detail and a practical understanding of every stage of production, from development through delivery.
 </p>
 
 </div>
@@ -612,7 +659,9 @@ and major international advertising campaigns.
 Featured <span>Projects</span>
 </h2>
 
-<div class="featured-grid">
+<div class="featured-grid"> 
+
+<!-- FEATURED PROJECTS -->
 
 <div class="project-card">
 
@@ -620,11 +669,21 @@ Featured <span>Projects</span>
 
 <div class="project-info">
 
-<h3>Pacto Brutal</h3>
+<h4>Pacto Brutal</h4>
+
+<span class="project-category">
+SERIES
+</span>
 
 <p>
 HBO Original Documentary Series
+<br>
+1st Assistant Director
 </p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
 
 </div>
 
@@ -636,11 +695,45 @@ HBO Original Documentary Series
 
 <div class="project-info">
 
-<h3>As Seguidoras</h3>
+<h4>As Seguidoras</h4>
+
+<span class="project-category">
+SERIES
+</span>
 
 <p>
 Prime Video Original Series
+<br>
+1st Assistant Director
 </p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/qossp/quando-o-sol-se-poe-poster.png">
+
+<div class="project-info">
+
+<h4>When the Sun Goes Down</h4>
+
+<span class="project-category">
+AWARD WINNING
+</span>
+
+<p>
+Writer • Director • Producer
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
 
 </div>
 
@@ -652,19 +745,125 @@ Prime Video Original Series
 
 <div class="project-info">
 
-<h3>Woman on Top</h3>
+<h4>Woman on Top</h4>
+
+<span class="project-category">
+FEATURE FILM
+</span>
 
 <p>
-FOX Feature Film
+2nd Assistant Director (Brazil)
 </p>
 
-</div>
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
 
 </div>
 
 </div>
 
-</section><section id="filmography" class="section">
+<div class="project-card">
+
+<img src="assets/assets/projects/gaycation/gaycation-poster.png">
+
+<div class="project-info">
+
+<h4>Gaycation Brazil</h4>
+
+<span class="project-category">
+DOCUMENTARY
+</span>
+
+<p>
+1st AD • Local Fixer
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/olimpics-rio2016/olimpics-2016-poster.png">
+
+<div class="project-info">
+
+<h4>Rio 2016 Olympic Games</h4>
+
+<span class="project-category">
+EVENTS
+</span>
+
+<p>
+Associate Venue Producer
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/coldplay/coldplay-01.jpeg">
+
+<div class="project-info">
+
+<h4>Coldplay</h4>
+
+<span class="project-category">
+DOCUMENTARY
+</span>
+
+<p>
+Mini Documentary
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/xango/xango-poster.png">
+
+<div class="project-info">
+
+<h4>O Xangô de Baker Street</h4>
+
+<span class="project-category">
+FEATURE FILM
+</span>
+
+<p>
+Production Casting
+</p>
+
+<a href="#" class="view-project">
+VIEW PROJECT
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="filmography" class="section">
 
 <h2 class="section-title">
 Film<span>ography</span>
@@ -674,11 +873,11 @@ Film<span>ography</span>
 
 <div class="category">
 
-<h3 class="category-title">
+<h3 class="section-title">
 Series
 </h3>
 
-<div class="projects-grid">
+<div class="featured-grid">
 
 <div class="project-card">
 
@@ -686,12 +885,14 @@ Series
 
 <div class="project-info">
 
-<h3>As Seguidoras</h3>
+<h4>As Seguidoras</h4>
+
+<span class="project-category">
+SERIES
+</span>
 
 <p>
-Prime Video • 2021
-<br>
-1st Assistant Director
+Prime Video
 </p>
 
 </div>
@@ -704,12 +905,68 @@ Prime Video • 2021
 
 <div class="project-info">
 
-<h3>Pacto Brutal</h3>
+<h4>Pacto Brutal</h4>
+
+<span class="project-category">
+SERIES
+</span>
 
 <p>
-HBO • 2021
-<br>
-1st Assistant Director
+HBO
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- AWARD WINNING -->
+
+<div class="category">
+
+<h3 class="section-title">
+Award Winning Projects
+</h3>
+
+<div class="featured-grid">
+
+<div class="project-card">
+
+<img src="assets/assets/projects/qossp/quando-o-sol-se-poe-poster.png">
+
+<div class="project-info">
+
+<h4>When the Sun Goes Down</h4>
+
+<span class="project-category">
+AWARD WINNING SHORT FILM
+</span>
+
+<p>
+Writer • Director • Producer
+</p>
+
+</div>
+
+</div>
+
+<div class="project-card">
+
+<img src="assets/assets/projects/opiao/opiao-poster.png">
+
+<div class="project-info">
+
+<h4>O Pião</h4>
+
+<span class="project-category">
+AWARD WINNING SHORT FILM
+</span>
+
+<p>
+Producer • Co-Director
 </p>
 
 </div>
@@ -724,40 +981,20 @@ HBO • 2021
 
 <div class="category">
 
-<h3 class="category-title">
+<h3 class="section-title">
 Feature Films
 </h3>
 
-<div class="projects-grid">
-
-<div class="project-card">
-
-<img src="assets/assets/projects/xango/xango-poster.png">
-
-<div class="project-info">
-
-<h3>O Xangô de Baker Street</h3>
-
-<p>
-Production Casting
-</p>
-
-</div>
-
-</div>
-
+<div class="featured-grid">  
+  
 <div class="project-card">
 
 <img src="assets/assets/projects/woman-on-top/woman-on-top-poster.png">
 
 <div class="project-info">
-
-<h3>Woman on Top</h3>
-
-<p>
-2nd Assistant Director (Brazil)
-</p>
-
+<h4>Woman on Top</h4>
+<span class="project-category">FEATURE FILM</span>
+<p>2nd Assistant Director (Brazil)</p>
 </div>
 
 </div>
@@ -767,13 +1004,9 @@ Production Casting
 <img src="assets/assets/projects/my-father/my-father-poster.png">
 
 <div class="project-info">
-
-<h3>My Father</h3>
-
-<p>
-2nd Assistant Director (Brazil)
-</p>
-
+<h4>My Father</h4>
+<span class="project-category">FEATURE FILM</span>
+<p>2nd Assistant Director (Brazil)</p>
 </div>
 
 </div>
@@ -783,13 +1016,21 @@ Production Casting
 <img src="assets/assets/projects/the-game/the-game-of-their-lives-poster.png">
 
 <div class="project-info">
+<h4>The Game of Their Lives</h4>
+<span class="project-category">FEATURE FILM</span>
+<p>2nd Assistant Director (Brazil)</p>
+</div>
 
-<h3>The Game of Their Lives</h3>
+</div>
 
-<p>
-2nd Assistant Director (Brazil)
-</p>
+<div class="project-card">
 
+<img src="assets/assets/projects/xango/xango-poster.png">
+
+<div class="project-info">
+<h4>O Xangô de Baker Street</h4>
+<span class="project-category">FEATURE FILM</span>
+<p>Production Casting</p>
 </div>
 
 </div>
@@ -799,13 +1040,9 @@ Production Casting
 <img src="assets/assets/projects/uma-baba-gloriosa/uma-baba-gloriosa-poster.png">
 
 <div class="project-info">
-
-<h3>Uma Babá Gloriosa</h3>
-
-<p>
-Feature Film
-</p>
-
+<h4>Uma Babá Gloriosa</h4>
+<span class="project-category">FEATURE FILM</span>
+<p>Feature Film</p>
 </div>
 
 </div>
@@ -818,44 +1055,87 @@ Feature Film
 
 <div class="category">
 
-<h3 class="category-title">
+<h3 class="section-title">
 Documentaries
 </h3>
 
-<div class="projects-grid">
+<div class="featured-grid">
 
 <div class="project-card">
-
 <img src="assets/assets/projects/rush/rush-poster.png">
-
 <div class="project-info">
-
-<h3>Rush in Rio</h3>
-
-<p>
-1st Assistant Director
-<br>
-Field Producer
-</p>
-
+<h4>Rush in Rio</h4>
+<span class="project-category">DOCUMENTARY</span>
+<p>1st Assistant Director • Field Producer</p>
 </div>
-
 </div>
 
 <div class="project-card">
-
 <img src="assets/assets/projects/coldplay/coldplay-01.jpeg">
-
 <div class="project-info">
+<h4>Coldplay</h4>
+<span class="project-category">DOCUMENTARY</span>
+<p>Mini Documentary</p>
+</div>
+</div>
 
-<h3>Coldplay</h3>
+<div class="project-card">
+<img src="assets/assets/projects/gaycation/gaycation-poster.png">
+<div class="project-info">
+<h4>Gaycation Brazil</h4>
+<span class="project-category">DOCUMENTARY</span>
+<p>1st AD • Local Fixer</p>
+</div>
+</div>
 
-<p>
-Mini Documentary
-</p>
+<div class="project-card">
+<img src="assets/assets/projects/star-aliance/star-aliance-poster.png">
+<div class="project-info">
+<h4>Star Alliance</h4>
+<span class="project-category">DOCUMENTARY</span>
+<p>1st AD • Local Fixer</p>
+</div>
+</div>
 
 </div>
 
+</div>
+
+<!-- DEVELOPMENT -->
+
+<div class="category">
+
+<h3 class="section-title">
+Development
+</h3>
+
+<div class="featured-grid">
+
+<div class="project-card">
+<img src="assets/assets/projects/rio-radical/rio-radical-poster.png">
+<div class="project-info">
+<h4>Rio Radical</h4>
+<span class="project-category">DEVELOPMENT</span>
+<p>Creator • Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/tinderela/tinderela-poster.png">
+<div class="project-info">
+<h4>Tinderela</h4>
+<span class="project-category">DEVELOPMENT</span>
+<p>Writer • Creator • Director</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="assets/assets/projects/shivanne-y-alberto/shivanne-poster.png">
+<div class="project-info">
+<h4>Shivanne & Alberto</h4>
+<span class="project-category">DEVELOPMENT</span>
+<p>Producer • Director</p>
+</div>
 </div>
 
 </div>
@@ -866,26 +1146,28 @@ Mini Documentary
 
 <div class="category">
 
-<h3 class="category-title">
+<h3 class="section-title">
 Events
 </h3>
 
-<div class="projects-grid">
+<div class="featured-grid">
 
 <div class="project-card">
-
 <img src="assets/assets/projects/olimpics-rio2016/olimpics-2016-poster.png">
-
 <div class="project-info">
-
-<h3>Rio 2016 Olympic Games</h3>
-
-<p>
-Associate Venue Producer
-</p>
-
+<h4>Rio 2016 Olympic Games</h4>
+<span class="project-category">EVENTS</span>
+<p>Associate Venue Producer</p>
+</div>
 </div>
 
+<div class="project-card">
+<img src="assets/assets/projects/rock-in-rio/rock-in-rio-poster.png">
+<div class="project-info">
+<h4>Rock in Rio</h4>
+<span class="project-category">EVENTS</span>
+<p>Backstage Production</p>
+</div>
 </div>
 
 </div>
@@ -896,199 +1178,46 @@ Associate Venue Producer
 
 <div class="category">
 
-<h3 class="category-title">
+<h3 class="section-title">
 Advertising
 </h3>
 
-<div class="projects-grid">
+<div class="featured-grid">
 
 <div class="project-card">
-
 <img src="assets/assets/projects/ballantines/ballantines-poster.png">
-
 <div class="project-info">
-
-<h3>Ballantines</h3>
-
-<p>
-Production Director
-<br>
-1st Assistant Director
-</p>
-
+<h4>Ballantines</h4>
+<span class="project-category">ADVERTISING</span>
+<p>Production Director • 1st AD</p>
 </div>
-
 </div>
 
 <div class="project-card">
-
 <img src="assets/assets/projects/enel/enel-poster.png">
-
 <div class="project-info">
-
-<h3>Enel</h3>
-
-<p>
-Executive Producer
-<br>
-1st Assistant Director
-</p>
-
+<h4>Enel</h4>
+<span class="project-category">ADVERTISING</span>
+<p>Executive Producer • 1st AD</p>
 </div>
-
 </div>
 
 <div class="project-card">
-
 <img src="assets/assets/projects/diesel/diesel-poster.png">
-
 <div class="project-info">
-
-<h3>Diesel</h3>
-
-<p>
-1st Assistant Director (Brazil)
-</p>
-
+<h4>Diesel</h4>
+<span class="project-category">ADVERTISING</span>
+<p>1st AD (Brazil)</p>
 </div>
-
 </div>
 
 <div class="project-card">
-
 <img src="assets/assets/projects/olympikus/olympikus-poster.png">
-
 <div class="project-info">
-
-<h3>Olympikus</h3>
-
-<p>
-1st Assistant Director
-</p>
-
+<h4>Olympikus</h4>
+<span class="project-category">ADVERTISING</span>
+<p>1st Assistant Director</p>
 </div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- WRITER DIRECTOR -->
-
-<div class="category">
-
-<h3 class="category-title">
-Writer • Director Projects
-</h3>
-
-<div class="projects-grid">
-
-<div class="project-card">
-
-<img src="assets/assets/projects/qossp/quando-o-sol-se-poe-poster.png">
-
-<div class="project-info">
-
-<h3>When the Sun Goes Down</h3>
-
-<p>
-Writer
-<br>
-Director
-<br>
-Producer
-</p>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="assets/assets/projects/opiao/opiao-poster.png">
-
-<div class="project-info">
-
-<h3>O Pião</h3>
-
-<p>
-Producer
-<br>
-Co-Director
-</p>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="assets/assets/projects/rio-radical/rio-radical-poster.png">
-
-<div class="project-info">
-
-<h3>Rio Radical</h3>
-
-<p>
-Creator
-<br>
-Director
-<br>
-In Development
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<!-- MUSIC VIDEOS -->
-
-<div class="category">
-
-<h3 class="category-title">
-Music Videos
-</h3>
-
-<div class="projects-grid">
-
-<div class="project-card">
-
-<img src="assets/assets/projects/i-dream/i-dream-a-world-poster.png">
-
-<div class="project-info">
-
-<h3>I Dream World</h3>
-
-<p>
-1st Assistant Director
-</p>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="assets/assets/projects/reggae-love/reggae-love-poster.png">
-
-<div class="project-info">
-
-<h3>Reggae Love</h3>
-
-<p>
-Writer
-<br>
-Director
-<br>
-Editor
-</p>
-
-</div>
-
 </div>
 
 </div>
@@ -1099,107 +1228,18 @@ Editor
 
 <div class="category">
 
-<h3 class="category-title">
+<h3 class="section-title">
 Telenovelas
 </h3>
 
-<div class="projects-grid">
+<div class="featured-grid">
 
-<div class="project-card">
-
-<img src="assets/assets/projects/telenovelas/a-lei-e-o-crime.png">
-
-<div class="project-info">
-
-<h3>A Lei e o Crime</h3>
-
-<p>
-Assistant Director
-</p>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="assets/assets/projects/telenovelas/alta-estacao.png">
-
-<div class="project-info">
-
-<h3>Alta Estação</h3>
-
-<p>
-Assistant Director
-</p>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="assets/assets/projects/telenovelas/bicho-do-mato.png">
-
-<div class="project-info">
-
-<h3>Bicho do Mato</h3>
-
-<p>
-Production Casting Assistant
-</p>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="assets/assets/projects/telenovelas/os-mutantes.png">
-
-<div class="project-info">
-
-<h3>Os Mutantes</h3>
-
-<p>
-Assistant Director
-</p>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="assets/assets/projects/telenovelas/promessas-de-amor.png">
-
-<div class="project-info">
-
-<h3>Promessas de Amor</h3>
-
-<p>
-Assistant Director
-</p>
-
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="assets/assets/projects/telenovelas/vidas-opostas.png">
-
-<div class="project-info">
-
-<h3>Vidas Opostas</h3>
-
-<p>
-Assistant Director
-</p>
-
-</div>
-
-</div>
+<div class="project-card"><img src="assets/assets/projects/telenovelas/a-lei-e-o-crime.png"></div>
+<div class="project-card"><img src="assets/assets/projects/telenovelas/alta-estacao.png"></div>
+<div class="project-card"><img src="assets/assets/projects/telenovelas/bicho-do-mato.png"></div>
+<div class="project-card"><img src="assets/assets/projects/telenovelas/os-mutantes.png"></div>
+<div class="project-card"><img src="assets/assets/projects/telenovelas/promessas-de-amor.png"></div>
+<div class="project-card"><img src="assets/assets/projects/telenovelas/vidas-opostas.png"></div>
 
 </div>
 
@@ -1207,40 +1247,35 @@ Assistant Director
 
 </section>
 
-<footer id="contact" class="footer">
+<footer id="contact" class="section">
 
-<h3 style="margin-bottom:20px;">
-Constância Laviola
-</h3>
+<h2 class="section-title">
+Contact
+</h2>
 
-<p style="margin-bottom:20px;color:#bdbdbd;">
-Madrid, Spain
-</p>
+<div style="text-align:center;">
 
-<a
-target="_blank"
-href="https://www.imdb.com/name/nm0492121/">
+<p>Madrid, Spain</p>
+
+<br>
+
+<a href="https://www.imdb.com/name/nm0492121/" target="_blank">
 IMDb
 </a>
 
-|
+&nbsp;&nbsp;|&nbsp;&nbsp;
 
-<a
-target="_blank"
-href="https://www.linkedin.com/in/constancialaviolacarreiro/">
+<a href="https://www.linkedin.com/in/constancialaviolacarreiro/" target="_blank">
 LinkedIn
 </a>
 
-<p
-style="
-margin-top:30px;
-color:#777;
-font-size:.9rem;
-">
+<br><br>
 
-© 2026 Constância Laviola
-
+<p>
+© Constância Laviola
 </p>
+
+</div>
 
 </footer>
 
@@ -1251,7 +1286,7 @@ document.querySelectorAll('.hero-slider img');
 
 let currentSlide = 0;
 
-setInterval(() => {
+setInterval(()=>{
 
 slides[currentSlide]
 .classList.remove('active');
@@ -1271,3 +1306,4 @@ slides[currentSlide]
 
 </body>
 </html>
+  

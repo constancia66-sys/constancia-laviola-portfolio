@@ -262,8 +262,10 @@ margin-bottom:22px;
 
 .featured-grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
+grid-template-columns:
+repeat(auto-fit,minmax(350px,420px));
+justify-content:center;
+gap:40px;
 }
 
 .project-card{

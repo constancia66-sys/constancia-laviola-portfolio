@@ -3438,5 +3438,47 @@ btn.classList.add('active');
 }
 
 </script>
+ <script>
+
+function setLanguage(lang){
+
+document.querySelectorAll('[data-en]').forEach(el=>{
+
+el.innerHTML = el.dataset[lang];
+
+});
+
+localStorage.setItem('language',lang);
+
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+
+btn.classList.remove('active');
+
+if(btn.dataset.lang===lang){
+
+btn.classList.add('active');
+
+}
+
+});
+
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+
+btn.addEventListener('click',()=>{
+
+setLanguage(btn.dataset.lang);
+
+});
+
+});
+
+const savedLanguage =
+localStorage.getItem('language') || 'en';
+
+setLanguage(savedLanguage);
+
+</script>
 </body>
 </html>

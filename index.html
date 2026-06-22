@@ -3120,5 +3120,40 @@ imageModal.style.display='none';
 }
 
 </script>
+ <script>
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+
+btn.addEventListener('click', function(){
+
+document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+
+this.classList.add('active');
+
+localStorage.setItem('language', this.dataset.lang);
+
+});
+
+});
+
+const savedLang = localStorage.getItem('language');
+
+if(savedLang){
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+
+btn.classList.remove('active');
+
+if(btn.dataset.lang === savedLang){
+
+btn.classList.add('active');
+
+}
+
+});
+
+}
+
+</script>
 </body>
 </html>

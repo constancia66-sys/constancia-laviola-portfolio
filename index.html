@@ -118,7 +118,37 @@ text-transform:uppercase;
 .nav-links a:hover{
 color:var(--gold);
 }
+.dropdown-nav{
+position:relative;
+cursor:pointer;
+}
 
+.dropdown-content{
+display:none;
+position:absolute;
+top:25px;
+left:0;
+background:#111;
+border:1px solid #d4b46a;
+border-radius:8px;
+min-width:220px;
+padding:10px;
+z-index:9999;
+}
+
+.dropdown-nav:hover .dropdown-content{
+display:block;
+}
+
+.dropdown-content a{
+display:block;
+padding:8px 10px;
+white-space:nowrap;
+}
+
+.dropdown-content a:hover{
+color:var(--gold);
+}
 .hero{
 height:100vh;
 position:relative;
@@ -735,6 +765,39 @@ Filmography
 </span>
 
 </a>
+
+<div class="dropdown-nav">
+
+<span
+data-en="Categories ▼"
+data-es="Categorías ▼"
+data-pt="Categorias ▼">
+
+Categories ▼
+
+</span>
+
+<div class="dropdown-content">
+
+<a href="#feature-films">Feature Films</a>
+
+<a href="#series">Series</a>
+
+<a href="#documentaries">Documentaries</a>
+
+<a href="#advertising">Advertising</a>
+
+<a href="#development">Development</a>
+
+<a href="#events">Events</a>
+
+<a href="#music-videos">Music Videos</a>
+
+<a href="#telenovelas">Telenovelas</a>
+
+</div>
+
+</div>
 
 <a href="#contact">
 

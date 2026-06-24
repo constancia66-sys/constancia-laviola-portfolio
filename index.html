@@ -136,8 +136,18 @@ padding:10px;
 z-index:9999;
 }
 
-.dropdown-nav:hover .dropdown-content{
+.dropdown-content.show{
 display:block;
+}
+
+.dropdown-button{
+background:none;
+border:none;
+color:white;
+font-size:.85rem;
+letter-spacing:1px;
+text-transform:uppercase;
+cursor:pointer;
 }
 
 .dropdown-content a{
@@ -768,6 +778,8 @@ Filmography
 
 <div class="dropdown-nav">
 
+<button class="dropdown-button" onclick="toggleCategories()">
+
 <span
 data-en="Categories ▼"
 data-es="Categorías ▼"
@@ -776,6 +788,8 @@ data-pt="Categorias ▼">
 Categories ▼
 
 </span>
+
+</button>
 
 <div class="dropdown-content">
 
@@ -4738,7 +4752,13 @@ const savedLanguage =
 localStorage.getItem('language') || 'en';
 
 setLanguage(savedLanguage);
+function toggleCategories(){
 
+document
+.querySelector('.dropdown-content')
+.classList.toggle('show');
+
+}
 </script>
 </body>
 </html>

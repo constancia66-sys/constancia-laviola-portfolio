@@ -169,26 +169,16 @@ overflow:hidden;
 
 display:flex;
 
-justify-content:flex-end;
+justify-content:center;
 
 align-items:flex-end;
-
-padding-top:250px;
-
-background:#000;
 
 }
 .hero-slider{
 
 position:absolute;
 
-top:250px;
-
-left:0;
-
-right:0;
-
-bottom:0;
+inset:0;
 
 }
 
@@ -202,9 +192,9 @@ width:100%;
 
 height:100%;
 
-object-fit:contain;
+object-fit:cover;
 
-object-position:center center;
+object-position:center 15%;
 
 opacity:0;
 
@@ -226,9 +216,9 @@ background:
 
 linear-gradient(
 
-rgba(0,0,0,.05),
+rgba(0,0,0,.30),
 
-rgba(0,0,0,.20)
+rgba(0,0,0,.85)
 
 );
 

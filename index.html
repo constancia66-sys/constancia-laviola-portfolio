@@ -460,11 +460,15 @@ padding:10px 15px;
 }
 .logo-hero{
 
+position:absolute;
+
 top:82px;
 
 left:18px;
 
 right:18px;
+
+z-index:1000;
 
 display:flex;
 
@@ -472,13 +476,15 @@ flex-direction:row;
 
 justify-content:space-between;
 
+align-items:flex-end;
+
 }
 
 .hero-name-top{
 
 font-size:1.95rem;
 
-line-height:.88;
+line-height:.90;
 
 margin:0;
 
@@ -487,13 +493,15 @@ max-width:65%;
 }
 .hero-buttons-top{
 
+position:static;
+
 display:flex;
 
 align-items:flex-end;
 
 gap:8px;
 
-margin-bottom:6px;
+margin-bottom:4px;
 
 }
  .hero-buttons-top .btn{

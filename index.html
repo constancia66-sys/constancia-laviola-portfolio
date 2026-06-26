@@ -458,42 +458,58 @@ line-height:1.2;
 .navbar{
 padding:10px 15px;
 }
- .logo-hero{
+.logo-hero{
 
-top:70px;
+position:absolute;
+
+top:110px;
+
 left:20px;
+
 right:20px;
 
+z-index:50;
+
 display:flex;
-flex-direction:row;
-justify-content:space-between;
-align-items:flex-start;
+
+flex-direction:column;
+
+gap:8px;
 
 }
 
 .hero-name-top{
 
-font-size:2rem;
-line-height:1;
+font-size:2.35rem;
+
+line-height:.9;
+
 margin:0;
 
 }
 .hero-buttons-top{
 
-position:static;
+position:absolute;
+
+right:0;
+
+bottom:6px;
 
 display:flex;
-gap:8px;
 
-margin:0;
+gap:6px;
 
 }
-.hero-buttons-top .btn{
+ .hero-buttons-top .btn{
 
-padding:6px 12px;
-font-size:.75rem;
+padding:5px 10px;
 
-}.nav-links a{
+font-size:.72rem;
+
+border-radius:20px;
+
+}
+ .nav-links a{
 font-size:.70rem;
 }
 
